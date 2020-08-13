@@ -5,8 +5,8 @@ readonly STARTED_AT=$(date +%Y%m%d_%H%M%S)
 
 # Database connection
 #
-readonly DB_HOST=${DB_HOST:-backup.mysql.lanbilling.test}
-readonly DB_PORT=${DB_PORT:-10002}
+readonly DB_HOST=${DB_HOST:-mysql.test}
+readonly DB_PORT=${DB_PORT:-3306}
 readonly DB_USERNAME=${DB_USERNAME:-backup_letocryloite}
 readonly DB_PASSWORD=${DB_PASSWORD:-almatramushi}
 readonly DB_DATABASE=$ORIGIN
