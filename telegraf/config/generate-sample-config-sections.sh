@@ -9,7 +9,7 @@ telegraf --version > $OUTPUT_DIR/telegraf.version
 for x in ${SECTIONS[@]}; do
   telegraf --sample-config --section-filter $x \
     | sed "0,/$PATTERN/d" \
-    | tail -n +3 \
-    | head -n -1 \
+    | tail --lines=+3 \
+    | head --lines=-1 \
     > $OUTPUT_DIR/$x.conf
 done
