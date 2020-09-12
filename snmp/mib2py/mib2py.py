@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-
 import os
 import re
 import sys
@@ -25,7 +24,11 @@ CMD_TEMPLATE = re.sub('\s*\|', '', '''
     |  --preload=SNMP-FRAMEWORK-MIB \
     |  --preload=SNMPv2-SMI \
     |  --preload=SNMPv2-TC \
-    |  --format=python \
+    | \
+    |  --preload=DLINK-ID-REC-MIB
+    |  --preload=TIMERANGE-MIB \
+    | \
+    |  --format={} \
     |  --keep-going \
     |  --level=5 \
     |  {}
@@ -50,10 +53,17 @@ for vendor in VENDORS:
             if filename.lower().endswith('.mib'):
                 source = filename
                 source_full = '{}/{}'.format(dir_path, source)
-                target_base = '{}_{}'.format(dir_path.split('/')[1], filename)
-                target_full = '{}/{}.py'.format(TARGET_ROOT_DIR, target_base)
+                target_base = '{}_{}'.format(dir_path.split('/')[1], filename).replace('-', '_').replace('.', '_')
                 log_base = target_base
-                log_full = '{}/{}.log'.format(LOG_ROOT_DIR, log_base)
+
+                target_full = '{}/{}.py'.format(TARGET_ROOT_DIR, target_base)
+                log_full = '{}/{}.py.log'.format(LOG_ROOT_DIR, log_base)
                 print('{} ---> {}'.format(source_full, target_full))
-                cmd = CMD_TEMPLATE.format(source_full, target_full, log_full)
+                cmd = CMD_TEMPLATE.format('python', source_full, target_full, log_full)
+                os.system(cmd)
+
+                target_full = '{}/{}.tree'.format(TARGET_ROOT_DIR, target_base)
+                log_full = '{}/{}.tree.log'.format(LOG_ROOT_DIR, log_base)
+                print('{} ---> {}'.format(source_full, target_full))
+                cmd = CMD_TEMPLATE.format('tree', source_full, target_full, log_full)
                 os.system(cmd)
