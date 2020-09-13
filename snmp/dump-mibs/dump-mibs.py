@@ -13,7 +13,7 @@ VENDORS = [
     'TFortis'
 ]
 SOURCE_ROOT_DIR = 'mibs'
-TARGET_ROOT_DIR = 'out/py'
+TARGET_ROOT_DIR = 'out/target'
 LOG_ROOT_DIR = 'out/log'
 CMD_TEMPLATE = re.sub('\s*\|', '', '''
     |smidump \
@@ -39,6 +39,19 @@ CMD_TEMPLATE = re.sub('\s*\|', '', '''
 ''')
 
 
+def do_work(dir_path, filename, target, ext):
+    source = filename
+    source_full = '{}/{}'.format(dir_path, source)
+    target_base = '{}_{}'.format(dir_path.split('/')[1], filename).replace('-', '_').replace('.', '_')
+    log_base = target_base
+
+    target_full = '{}/{}.{}'.format(TARGET_ROOT_DIR, target_base, ext)
+    log_full = '{}/{}.{}.log'.format(LOG_ROOT_DIR, log_base, target)
+    print('{} ---> {}'.format(source_full, target_full))
+    cmd = CMD_TEMPLATE.format(target, source_full, target_full, log_full)
+    os.system(cmd)
+
+
 if not os.path.exists(SOURCE_ROOT_DIR):
     for vendor in VENDORS:
         vendor_dir = '{}/{}'.format(SOURCE_ROOT_DIR, vendor)
@@ -53,19 +66,5 @@ for vendor in VENDORS:
     for dir_path, _, filenames in os.walk(vendor_dir):
         for filename in filenames:
             if filename.lower().endswith('.mib'):
-                source = filename
-                source_full = '{}/{}'.format(dir_path, source)
-                target_base = '{}_{}'.format(dir_path.split('/')[1], filename).replace('-', '_').replace('.', '_')
-                log_base = target_base
-
-                target_full = '{}/{}.py'.format(TARGET_ROOT_DIR, target_base)
-                log_full = '{}/{}.py.log'.format(LOG_ROOT_DIR, log_base)
-                print('{} ---> {}'.format(source_full, target_full))
-                cmd = CMD_TEMPLATE.format('python', source_full, target_full, log_full)
-                os.system(cmd)
-
-                target_full = '{}/{}.tree'.format(TARGET_ROOT_DIR, target_base)
-                log_full = '{}/{}.tree.log'.format(LOG_ROOT_DIR, log_base)
-                print('{} ---> {}'.format(source_full, target_full))
-                cmd = CMD_TEMPLATE.format('tree', source_full, target_full, log_full)
-                os.system(cmd)
+                do_work(dir_path, filename, 'python', 'py')
+                do_work(dir_path, filename, 'tree', 'tree.txt')
