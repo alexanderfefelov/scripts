@@ -9,6 +9,7 @@ from pathlib import Path
 VENDORS = [
     'D-Link',
     'MikroTik',
+    'SNR',
     'TFortis'
 ]
 SOURCE_ROOT_DIR = 'mibs'
@@ -21,6 +22,7 @@ CMD_TEMPLATE = re.sub('\s*\|', '', '''
     |  --preload=IF-MIB \
     |  --preload=INET-ADDRESS-MIB \
     |  --preload=Q-BRIDGE-MIB \
+    |  --preload=RFC-1215 \
     |  --preload=SNMP-FRAMEWORK-MIB \
     |  --preload=SNMPv2-SMI \
     |  --preload=SNMPv2-TC \
