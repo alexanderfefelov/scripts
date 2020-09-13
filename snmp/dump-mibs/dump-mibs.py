@@ -9,7 +9,7 @@ from pathlib import Path
 VENDORS = [
     'D-Link',
     'MikroTik',
-    'SNR',
+    'NAG',
     'TFortis'
 ]
 SOURCE_ROOT_DIR = 'mibs'
