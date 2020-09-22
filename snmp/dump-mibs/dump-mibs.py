@@ -10,6 +10,7 @@ VENDORS = [
     'D-Link',
     'MikroTik',
     'NAG',
+    'NetPing',
     'TFortis'
 ]
 SOURCE_ROOT_DIR = 'mibs'
