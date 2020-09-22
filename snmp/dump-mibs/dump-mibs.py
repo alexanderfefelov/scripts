@@ -34,7 +34,7 @@ CMD_TEMPLATE = re.sub('\s*\|', '', '''
     |  --format={} \
     |  --keep-going \
     |  --level=5 \
-    |  {}
+    |  "{}"
     |  > {}
     |  2> {}
 ''')
@@ -43,7 +43,7 @@ CMD_TEMPLATE = re.sub('\s*\|', '', '''
 def do_work(dir_path, filename, target, ext):
     source = filename
     source_full = '{}/{}'.format(dir_path, source)
-    target_base = '{}_{}'.format(dir_path.split('/')[1], filename).replace('-', '_').replace('.', '_')
+    target_base = '{}_{}'.format(dir_path.split('/')[1], filename).replace(' ', '_').replace('-', '_').replace('.', '_')
     log_base = target_base
 
     target_full = '{}/{}.{}'.format(TARGET_ROOT_DIR, target_base, ext)
