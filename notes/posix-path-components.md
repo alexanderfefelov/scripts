@@ -15,7 +15,7 @@
 
 ```bash
 
-            ┌──────────────────── basename "$(dirname $(realpath "$0"))"
+            ┌──────────────────── basename "$(dirname "$(realpath "$0")")"
          ┌──┴┐
          │   │
 
