@@ -9,7 +9,7 @@ readonly STUFF=yEd-$VERSION.zip
 
 readonly TARGET_DIR=$HOME/programs/yed
 mkdir --parents $TARGET_DIR
-readonly START_SCRIPT=$TARGET_DIR/start_yed.sh
+readonly START_SCRIPT=$TARGET_DIR/start-yed.sh
 
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
