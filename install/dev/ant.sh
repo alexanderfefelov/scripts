@@ -15,7 +15,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   cd $TEMP_DIR
 
   echo -n Downloading...
-  wget --quiet https://apache-mirror.rbc.ru/pub/apache/ant/binaries/$STUFF
+  wget --quiet https://downloads.apache.org/ant/binaries/$STUFF
   echo done
 
   echo -n Extracting...
