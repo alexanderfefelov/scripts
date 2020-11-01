@@ -13,7 +13,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   wget --quiet http://binaries.erlang-solutions.com/ubuntu/erlang_solutions.asc
   apt-key add erlang_solutions.asc
-  add-apt-repository "deb [arch=amd64] https://packages.erlang-solutions.com/ubuntu focal contrib"
+  echo "deb [arch=amd64] https://packages.erlang-solutions.com/ubuntu focal contrib" > /etc/apt/sources.list.d/erlang-solutions.list
   apt-get -qq update
   apt-get -qq install esl-erlang
 )

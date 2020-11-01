@@ -13,7 +13,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   wget --quiet https://deb.opera.com/archive.key
   apt-key add archive.key
-  add-apt-repository "deb https://deb.opera.com/opera-stable/ stable non-free"
+  echo "deb https://deb.opera.com/opera-stable/ stable non-free" > /etc/apt/sources.list.d/opera-stable.list
   apt-get -qq update
   apt-get -qq install opera-stable
 )

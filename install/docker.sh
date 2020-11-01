@@ -14,16 +14,8 @@ apt-get -qq install \
   curl \
   gnupg-agent \
   software-properties-common
-
-curl --silent --show-error --location \
-  https://download.docker.com/linux/ubuntu/gpg \
-  | apt-key add -
-
-add-apt-repository \
-  "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-  focal \
-  stable"
-
+curl --silent --show-error --location https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" > /etc/apt/sources.list.d/docker.list
 apt-get -qq update
 apt-get -qq install \
   docker-ce \
