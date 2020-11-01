@@ -8,4 +8,6 @@ set -e
 [ $UID -eq 0 ] || exec sudo bash "$0" "$@"
 
 apt-get -qq update
-apt-get -qq install clisp
+apt-get -qq install \
+  clisp \
+  clisp-doc
