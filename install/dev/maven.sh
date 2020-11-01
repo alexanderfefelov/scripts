@@ -31,7 +31,7 @@ rm --recursive --force $TEMP_DIR
 echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
-echo 'export MAVEN_HOME=$HOME/dev/maven
-export PATH=$MAVEN_HOME/bin:$PATH
-' > $HOME/.profile.d/maven.sh
+echo "export MAVEN_HOME=$TARGET_DIR
+export PATH=\$MAVEN_HOME/bin:\$PATH
+" > $HOME/.profile.d/maven.sh
 echo done

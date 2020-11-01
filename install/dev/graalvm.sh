@@ -33,7 +33,7 @@ echo -n Configuring...
 ln --symbolic $TARGET_DIR/$BASE-$VERSION $TARGET_DIR/default
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
-echo 'export JAVA_HOME=$HOME/dev/jdk/default
-export PATH=$JAVA_HOME/bin:$PATH
-' > $HOME/.profile.d/jdk.sh
+echo "export JAVA_HOME=$TARGET_DIR/default
+export PATH=\$JAVA_HOME/bin:\$PATH
+" > $HOME/.profile.d/jdk.sh
 echo done

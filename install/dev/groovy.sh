@@ -31,7 +31,7 @@ rm --recursive --force $TEMP_DIR
 echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
-echo 'export GROOVY_HOME=$HOME/dev/groovy
-export PATH=$GROOVY_HOME/bin:$PATH
-' > $HOME/.profile.d/groovy.sh
+echo "export GROOVY_HOME=$TARGET_DIR
+export PATH=\$GROOVY_HOME/bin:\$PATH
+" > $HOME/.profile.d/groovy.sh
 echo done

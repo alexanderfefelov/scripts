@@ -28,7 +28,7 @@ rm --recursive --force $TEMP_DIR
 echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
-echo 'export CLOJURE_HOME=$HOME/dev/clojure
-export PATH=$CLOJURE_HOME/bin:$PATH
-' > $HOME/.profile.d/clojure.sh
+echo "export CLOJURE_HOME=$TARGET_DIR
+export PATH=\$CLOJURE_HOME/bin:\$PATH
+" > $HOME/.profile.d/clojure.sh
 echo done

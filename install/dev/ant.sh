@@ -31,7 +31,7 @@ rm --recursive --force $TEMP_DIR
 echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
-echo 'export ANT_HOME=$HOME/dev/ant
-export PATH=$ANT_HOME/bin:$PATH
-' > $HOME/.profile.d/ant.sh
+echo "export ANT_HOME=$TARGET_DIR
+export PATH=\$ANT_HOME/bin:\$PATH
+" > $HOME/.profile.d/ant.sh
 echo done

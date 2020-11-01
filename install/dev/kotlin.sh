@@ -31,7 +31,7 @@ rm --recursive --force $TEMP_DIR
 echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
-echo 'export KOTLIN_HOME=$HOME/dev/kotlin
-export PATH=$KOTLIN_HOME/bin:$PATH
-' > $HOME/.profile.d/kotlin.sh
+echo "export KOTLIN_HOME=$TARGET_DIR
+export PATH=\$KOTLIN_HOME/bin:\$PATH
+" > $HOME/.profile.d/kotlin.sh
 echo done

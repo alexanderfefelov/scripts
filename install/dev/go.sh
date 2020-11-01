@@ -34,10 +34,10 @@ rm --recursive --force $TEMP_DIR
 echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
-echo 'export GO_HOME=$HOME/dev/go
-export PATH=$GO_HOME/bin:$PATH
+echo "export GO_HOME=$TARGET_DIR
+export PATH=\$GO_HOME/bin:\$PATH
 
-export GOROOT=$GO_HOME
-export GOPATH=$HOME/projects/go
-' > $HOME/.profile.d/go.sh
+export GOROOT=\$GO_HOME
+export GOPATH=$WORKSPACE
+" > $HOME/.profile.d/go.sh
 echo done
