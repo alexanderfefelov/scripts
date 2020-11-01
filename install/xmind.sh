@@ -4,8 +4,8 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly VERSION=update9
-readonly STUFF=xmind-8-$VERSION-linux.zip
+readonly VERSION=8-update9
+readonly STUFF=xmind-$VERSION-linux.zip
 
 readonly TARGET_DIR=$HOME/programs/xmind
 mkdir --parents $TARGET_DIR
