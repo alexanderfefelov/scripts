@@ -4,7 +4,7 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly VERSION=1.4.1
+readonly VERSION=1.4.2
 readonly STUFF=sbt-$VERSION.tgz
 
 readonly TARGET_DIR=$HOME/dev/sbt
