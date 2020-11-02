@@ -28,3 +28,5 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   echo done
 )
 rm --recursive --force $TEMP_DIR
+
+cp --force winbox.ico $TARGET_DIR

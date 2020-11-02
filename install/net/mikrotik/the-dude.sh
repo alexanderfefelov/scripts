@@ -28,8 +28,10 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   echo -n Installing...
   mv --force dude/* $TARGET_DIR
   chmod +x $TARGET_DIR/dude.exe
-  echo 'wine "$(dirname "$(realpath "$0")")"/dude.exe' > $START_SCRIPT
+  echo 'cd "$(dirname "$(realpath "$0")")" && wine dude.exe' > $START_SCRIPT
   chmod +x $START_SCRIPT
   echo done
 )
 rm --recursive --force $TEMP_DIR
+
+cp --force the-dude.ico $TARGET_DIR
