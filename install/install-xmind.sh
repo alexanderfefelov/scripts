@@ -25,11 +25,10 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   echo -n Installing...
   mv --force dist/* $TARGET_DIR
-  echo '"$(dirname "$(realpath "$0")")"/XMind_amd64/XMind \
--configuration "$(dirname "$(realpath "$0")")"/XMind_amd64/configuration \
--data "$(dirname "$(realpath "$0")")"/workspace \
-"$@"
-' > $START_SCRIPT
+  echo $TARGET_DIR/XMind_amd64/XMind \
+-configuration $TARGET_DIR/XMind_amd64/configuration \
+-data $TARGET_DIR/workspace \
+'"$@"' > $START_SCRIPT
   chmod +x $START_SCRIPT
   echo done
 )

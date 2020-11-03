@@ -10,6 +10,7 @@ readonly STUFF=SumatraPDF-$VERSION.zip
 readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
 readonly TARGET_DIR=$HOME/programs/$MONIKER
 readonly START_SCRIPT=$TARGET_DIR/start-$MONIKER.sh
+readonly EXE=SumatraPDF.exe
 
 create_config_file() {
   echo '# https://www.sumatrapdfreader.org/settings/settings3.2.html
@@ -23,7 +24,7 @@ EbookUI [
 }
 
 create_start_script() {
-  echo wine $TARGET_DIR/SumatraPDF.exe '"$@"' > $START_SCRIPT
+  echo wine $TARGET_DIR/$EXE '"$@"' > $START_SCRIPT
   chmod +x $START_SCRIPT
 }
 
@@ -66,7 +67,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   echo done
 
   echo -n Installing...
-  mv --force SumatraPDF.exe $TARGET_DIR
+  mv --force $EXE $TARGET_DIR
   cp --force $INSTALLER_DIR/$MONIKER.ico $TARGET_DIR
   create_config_file
   create_start_script

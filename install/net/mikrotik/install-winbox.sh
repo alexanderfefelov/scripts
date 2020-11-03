@@ -20,9 +20,8 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   echo done
 
   echo -n Installing...
-  mv $STUFF $EXE
-  mv --force $EXE $TARGET_DIR
-  echo 'wine "$(dirname "$(realpath "$0")")"'/$EXE > $START_SCRIPT
+  mv --force  $STUFF $TARGET_DIR/$EXE
+  echo wine $TARGET_DIR/$EXE > $START_SCRIPT
   chmod +x $START_SCRIPT
   echo done
 )
