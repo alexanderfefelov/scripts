@@ -24,7 +24,6 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   echo -n Installing...
   mv --force netbeans/* $TARGET_DIR
-  chmod +x $TARGET_DIR/bin/netbeans
   echo done
 )
 rm --recursive --force $TEMP_DIR
