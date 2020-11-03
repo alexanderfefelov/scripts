@@ -25,7 +25,6 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   echo -n Installing...
   mv --force Balsamiq_Mockups_3/* $TARGET_DIR
-  chmod +x $TARGET_DIR/"Balsamiq Mockups 3.exe"
   echo 'wine "$(dirname "$(realpath "$0")")"/"Balsamiq Mockups 3.exe" "$@"' > $START_SCRIPT
   chmod +x $START_SCRIPT
   echo done
