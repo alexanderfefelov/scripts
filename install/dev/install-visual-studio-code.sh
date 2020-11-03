@@ -10,7 +10,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   wget --quiet https://packages.microsoft.com/keys/microsoft.asc
   sudo apt-key add microsoft.asc
-  sudo add-apt-repository "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main"
+  sudo bash -c 'echo "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
   sudo apt-get -qq update
   sudo apt-get -qq install code
 
