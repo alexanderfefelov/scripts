@@ -11,6 +11,14 @@ readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
 readonly TARGET_DIR=$HOME/programs/$MONIKER
 readonly START_SCRIPT=$TARGET_DIR/start-$MONIKER.sh
 readonly EXE=SumatraPDF.exe
+readonly MIME_TYPES="
+  application/epub+zip
+  application/pdf
+  application/x-fictionbook+xml
+  application/x-mobipocket-ebook
+  image/vnd.djvu
+  image/vnd.djvu+multipage
+"
 
 create_config_file() {
   echo '# https://www.sumatrapdfreader.org/settings/settings3.2.html
@@ -39,15 +47,7 @@ Exec=$START_SCRIPT %u
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }
 
-register_mime_types() {
-  local -r MIME_TYPES="
-    application/epub+zip
-    application/pdf
-    application/x-fictionbook+xml
-    application/x-mobipocket-ebook
-    image/vnd.djvu
-    image/vnd.djvu+multipage
-  "
+register_mime_handlers() {
   for x in $MIME_TYPES; do
     xdg-mime default $MONIKER.desktop $x
   done
@@ -72,7 +72,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   create_config_file
   create_start_script
   create_desktop_entry
-  register_mime_types
+  register_mime_handlers
   echo done
 )
 rm --recursive --force $TEMP_DIR
