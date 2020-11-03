@@ -21,6 +21,7 @@ readonly DESKTOP_DIR=$HOME/.local/share/applications
 readonly DESKTOP_FILE=$DESKTOP_DIR/.telnet-handler.desktop
 echo "[Desktop Entry]
 Type=Application
-Exec=$HANDLER_FILE %u" > $DESKTOP_FILE
+Exec=$HANDLER_FILE %u
+NoDisplay=true" > $DESKTOP_FILE
 
 xdg-mime default $(basename $DESKTOP_FILE) $MIME_TYPE
