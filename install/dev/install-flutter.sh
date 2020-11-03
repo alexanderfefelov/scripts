@@ -32,6 +32,5 @@ echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
 echo "export FLUTTER_HOME=$TARGET_DIR
-export PATH=\$FLUTTER_HOME/bin:\$PATH
-" > $HOME/.profile.d/flutter.sh
+export PATH=\$FLUTTER_HOME/bin:\$PATH" > $HOME/.profile.d/flutter.sh
 echo done

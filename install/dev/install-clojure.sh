@@ -29,6 +29,5 @@ echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
 echo "export CLOJURE_HOME=$TARGET_DIR
-export PATH=\$CLOJURE_HOME/bin:\$PATH
-" > $HOME/.profile.d/clojure.sh
+export PATH=\$CLOJURE_HOME/bin:\$PATH" > $HOME/.profile.d/clojure.sh
 echo done
