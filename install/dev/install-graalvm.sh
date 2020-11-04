@@ -5,7 +5,7 @@
 set -e
 
 readonly VERSION=20.2.0
-readonly BASE=graalvm-ce-java11
+readonly BASE=graalvm-ce-java8
 readonly STUFF=$BASE-linux-amd64-$VERSION.tar.gz
 readonly TARGET_DIR=$HOME/dev/jdk
 
