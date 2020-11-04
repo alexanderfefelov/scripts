@@ -16,6 +16,17 @@ create_start_script() {
   chmod +x $START_SCRIPT
 }
 
+create_desktop_entry() { # https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+  echo "[Desktop Entry]
+Type=Application
+Categories=Network;
+Name=WinBox
+Comment=
+Icon=$TARGET_DIR/$MONIKER.ico
+Exec=$START_SCRIPT
+Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
+}
+
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2
   exit 1
@@ -34,6 +45,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   mv --force  $STUFF $TARGET_DIR/$EXE
   cp --force $INSTALLER_DIR/$MONIKER.ico $TARGET_DIR
   create_start_script
+  create_desktop_entry
   echo done
 )
 rm --recursive --force $TEMP_DIR
