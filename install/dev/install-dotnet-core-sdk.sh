@@ -33,7 +33,9 @@ echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
 echo "export DOTNET_CORE_SDK_HOME=$TARGET_DIR
-export PATH=$DOTNET_CORE_SDK_HOME:$PATH" > $HOME/.profile.d/$MONIKER.sh
+export PATH=\$DOTNET_CORE_SDK_HOME:\$PATH
+
+export DOTNET_ROOT=\$DOTNET_CORE_SDK_HOME" > $HOME/.profile.d/$MONIKER.sh
 echo done
 
 $TARGET_DIR/dotnet --info
