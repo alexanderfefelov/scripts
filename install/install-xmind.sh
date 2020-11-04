@@ -6,11 +6,15 @@ set -e
 
 readonly VERSION=8-update9
 readonly STUFF=xmind-$VERSION-linux.zip
-
 readonly TARGET_DIR=$HOME/programs/xmind
-mkdir --parents $TARGET_DIR
 readonly START_SCRIPT=$TARGET_DIR/start-xmind.sh
 
+if [ -d "$TARGET_DIR" ]; then
+  echo Directory exists: $TARGET_DIR >&2
+  exit 1
+fi
+
+mkdir --parents $TARGET_DIR
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
   cd $TEMP_DIR

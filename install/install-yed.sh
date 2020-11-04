@@ -6,11 +6,15 @@ set -e
 
 readonly VERSION=3.20.1
 readonly STUFF=yEd-$VERSION.zip
-
 readonly TARGET_DIR=$HOME/programs/yed
-mkdir --parents $TARGET_DIR
 readonly START_SCRIPT=$TARGET_DIR/start-yed.sh
 
+if [ -d "$TARGET_DIR" ]; then
+  echo Directory exists: $TARGET_DIR >&2
+  exit 1
+fi
+
+mkdir --parents $TARGET_DIR
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
   cd $TEMP_DIR

@@ -6,13 +6,16 @@ set -e
 
 readonly VERSION=1.15.3
 readonly STUFF=go$VERSION.linux-amd64.tar.gz
-
 readonly TARGET_DIR=$HOME/dev/go
-mkdir --parents $TARGET_DIR
-
 readonly WORKSPACE=$HOME/projects/go
-mkdir --parents $WORKSPACE
 
+if [ -d "$TARGET_DIR" ]; then
+  echo Directory exists: $TARGET_DIR >&2
+  exit 1
+fi
+
+mkdir --parents $TARGET_DIR
+mkdir --parents $WORKSPACE
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
   cd $TEMP_DIR

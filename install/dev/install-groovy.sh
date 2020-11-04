@@ -6,10 +6,14 @@ set -e
 
 readonly VERSION=3.0.6
 readonly STUFF=apache-groovy-binary-$VERSION.zip
-
 readonly TARGET_DIR=$HOME/dev/groovy
-mkdir --parents $TARGET_DIR
 
+if [ -d "$TARGET_DIR" ]; then
+  echo Directory exists: $TARGET_DIR >&2
+  exit 1
+fi
+
+mkdir --parents $TARGET_DIR
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
   cd $TEMP_DIR

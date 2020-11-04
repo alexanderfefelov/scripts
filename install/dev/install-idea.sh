@@ -6,10 +6,14 @@ set -e
 
 readonly VERSION=2020.2.3
 readonly STUFF=ideaIU-$VERSION.tar.gz
-
 readonly TARGET_DIR=$HOME/dev/idea
-mkdir --parents $TARGET_DIR
 
+if [ -d "$TARGET_DIR" ]; then
+  echo Directory exists: $TARGET_DIR >&2
+  exit 1
+fi
+
+mkdir --parents $TARGET_DIR
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
   cd $TEMP_DIR
