@@ -17,7 +17,7 @@ Name=IntelliJ IDEA
 Comment=
 Icon=$TARGET_DIR/bin/idea.png
 Exec=$TARGET_DIR/bin/idea.sh
-Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
+Terminal=false" > $HOME/.local/share/applications/jetbrains-idea.desktop
 }
 
 if [ -d "$TARGET_DIR" ]; then
