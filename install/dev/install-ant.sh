@@ -4,9 +4,10 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=ant
 readonly VERSION=1.10.9
 readonly STUFF=apache-ant-$VERSION-bin.tar.gz
-readonly TARGET_DIR=$HOME/dev/ant
+readonly TARGET_DIR=$HOME/dev/$MONIKER
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2

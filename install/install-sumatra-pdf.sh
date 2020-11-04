@@ -20,17 +20,6 @@ readonly MIME_TYPES="
   image/vnd.djvu+multipage
 "
 
-create_config_file() {
-  echo '# https://www.sumatrapdfreader.org/settings/settings3.2.html
-
-UiLanguage = en
-EbookUI [
-  # If true, the UI used for PDF documents will be used for ebooks as well (enables printing
-  # and searching, disables automatic reflow)
-  UseFixedPageUI = true
-]' > $TARGET_DIR/SumatraPDF-settings.txt
-}
-
 create_start_script() {
   echo wine $TARGET_DIR/$EXE '"$@"' > $START_SCRIPT
   chmod +x $START_SCRIPT
@@ -51,6 +40,17 @@ register_mime_handlers() {
   for x in $MIME_TYPES; do
     xdg-mime default $MONIKER.desktop $x
   done
+}
+
+create_config_file() {
+  echo '# https://www.sumatrapdfreader.org/settings/settings3.2.html
+
+UiLanguage = en
+EbookUI [
+  # If true, the UI used for PDF documents will be used for ebooks as well (enables printing
+  # and searching, disables automatic reflow)
+  UseFixedPageUI = true
+]' > $TARGET_DIR/SumatraPDF-settings.txt
 }
 
 if [ -d "$TARGET_DIR" ]; then
@@ -74,10 +74,13 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   echo -n Installing...
   mv --force $EXE $TARGET_DIR
   cp --force $INSTALLER_DIR/$MONIKER.ico $TARGET_DIR
-  create_config_file
   create_start_script
   create_desktop_entry
   register_mime_handlers
   echo done
 )
 rm --recursive --force $TEMP_DIR
+
+echo -n Configuring...
+create_config_file
+echo done

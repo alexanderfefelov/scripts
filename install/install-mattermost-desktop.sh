@@ -4,9 +4,10 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=mattermost-desktop
 readonly VERSION=4.6.1
 readonly STUFF=mattermost-desktop-$VERSION-linux-x64.tar.gz
-readonly TARGET_DIR=$HOME/programs/mattermost-desktop
+readonly TARGET_DIR=$HOME/programs/$MONIKER
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2

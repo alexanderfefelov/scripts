@@ -4,9 +4,10 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=gradle
 readonly VERSION=6.7
 readonly STUFF=gradle-$VERSION-bin.zip
-readonly TARGET_DIR=$HOME/dev/gradle
+readonly TARGET_DIR=$HOME/dev/$MONIKER
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2

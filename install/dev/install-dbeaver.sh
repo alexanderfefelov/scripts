@@ -4,9 +4,10 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=dbeaver
 readonly VERSION=7.2.3
 readonly STUFF=dbeaver-ce-$VERSION-linux.gtk.x86_64.tar.gz
-readonly TARGET_DIR=$HOME/dev/dbeaver
+readonly TARGET_DIR=$HOME/dev/$MONIKER
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2

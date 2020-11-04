@@ -4,9 +4,10 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=maven
 readonly VERSION=3.6.3
 readonly STUFF=apache-maven-$VERSION-bin.tar.gz
-readonly TARGET_DIR=$HOME/dev/maven
+readonly TARGET_DIR=$HOME/dev/$MONIKER
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2

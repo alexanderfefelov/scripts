@@ -4,9 +4,10 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=sbt
 readonly VERSION=1.4.2
 readonly STUFF=sbt-$VERSION.tgz
-readonly TARGET_DIR=$HOME/dev/sbt
+readonly TARGET_DIR=$HOME/dev/$MONIKER
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2

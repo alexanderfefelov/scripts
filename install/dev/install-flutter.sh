@@ -4,9 +4,10 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=flutter
 readonly VERSION=1.22.3
 readonly STUFF=flutter_linux_$VERSION-stable.tar.xz
-readonly TARGET_DIR=$HOME/dev/flutter
+readonly TARGET_DIR=$HOME/dev/$MONIKER
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2

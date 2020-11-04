@@ -4,9 +4,10 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=clojure
 readonly VERSION=1.10.1.727
 readonly STUFF=linux-install-$VERSION.sh
-readonly TARGET_DIR=$HOME/dev/clojure
+readonly TARGET_DIR=$HOME/dev/$MONIKER
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2

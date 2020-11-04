@@ -4,10 +4,11 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=yed
 readonly VERSION=3.20.1
 readonly STUFF=yEd-$VERSION.zip
-readonly TARGET_DIR=$HOME/programs/yed
-readonly START_SCRIPT=$TARGET_DIR/start-yed.sh
+readonly TARGET_DIR=$HOME/programs/$MONIKER
+readonly START_SCRIPT=$TARGET_DIR/start-$MONIKER.sh
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2

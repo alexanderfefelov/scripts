@@ -4,13 +4,24 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-VERSION=4.0beta3
-STUFF=dude-install-$VERSION.exe
+readonly MONIKER=the-dude
+readonly VERSION=4.0beta3
+readonly STUFF=dude-install-$VERSION.exe
+readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
+readonly TARGET_DIR=$HOME/programs/mikrotik/$MONIKER
+readonly START_SCRIPT=$TARGET_DIR/start-$MONIKER.sh
 
-readonly TARGET_DIR=$HOME/programs/mikrotik/the-dude
+create_start_script() {
+  echo cd $TARGET_DIR '&&' wine dude.exe > $START_SCRIPT
+  chmod +x $START_SCRIPT
+}
+
+if [ -d "$TARGET_DIR" ]; then
+  echo Directory exists: $TARGET_DIR >&2
+  exit 1
+fi
+
 mkdir --parents $TARGET_DIR
-readonly START_SCRIPT=$TARGET_DIR/start-the-dude.sh
-
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
   cd $TEMP_DIR
@@ -27,10 +38,8 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   echo -n Installing...
   mv --force dude/* $TARGET_DIR
-  echo cd $TARGET_DIR '&&' wine dude.exe > $START_SCRIPT
-  chmod +x $START_SCRIPT
+  cp --force $INSTALLER_DIR/$MONIKER.ico $TARGET_DIR
+  create_start_script
   echo done
 )
 rm --recursive --force $TEMP_DIR
-
-cp --force the-dude.ico $TARGET_DIR

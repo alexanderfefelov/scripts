@@ -4,9 +4,10 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=idea
 readonly VERSION=2020.2.3
 readonly STUFF=ideaIU-$VERSION.tar.gz
-readonly TARGET_DIR=$HOME/dev/idea
+readonly TARGET_DIR=$HOME/dev/$MONIKER
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2
