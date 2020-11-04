@@ -26,7 +26,7 @@ Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }
 
 install_mime_types() {
-  sudo xdg-mime install $TARGET_DIR/support/mime-types.xml
+  xdg-mime install $TARGET_DIR/support/mime-types.xml
 }
 
 register_mime_handlers() {

@@ -36,7 +36,7 @@ install_mime_type() { # https://www.iana.org/assignments/media-types/application
     <icon name="'$MONIKER'"/>
   </mime-type>
 </mime-info>' > $MONIKER-mime.xml
-  sudo xdg-mime install $MONIKER-mime.xml
+  xdg-mime install $MONIKER-mime.xml
 }
 
 install_mime_icon() {
