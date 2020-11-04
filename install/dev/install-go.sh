@@ -42,5 +42,5 @@ echo "export GO_HOME=$TARGET_DIR
 export PATH=\$GO_HOME/bin:\$PATH
 
 export GOROOT=\$GO_HOME
-export GOPATH=$WORKSPACE" > $HOME/.profile.d/go.sh
+export GOPATH=$WORKSPACE" > $HOME/.profile.d/$MONIKER.sh
 echo done

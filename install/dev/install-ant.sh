@@ -37,5 +37,5 @@ echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
 echo "export ANT_HOME=$TARGET_DIR
-export PATH=\$ANT_HOME/bin:\$PATH" > $HOME/.profile.d/ant.sh
+export PATH=\$ANT_HOME/bin:\$PATH" > $HOME/.profile.d/$MONIKER.sh
 echo done

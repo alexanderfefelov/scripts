@@ -4,6 +4,8 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=rust
+
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
   cd $TEMP_DIR
@@ -21,5 +23,5 @@ rm --recursive --force $TEMP_DIR
 echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
-echo "export PATH=\$HOME/.cargo/bin:\$PATH" > $HOME/.profile.d/rust.sh
+echo "export PATH=\$HOME/.cargo/bin:\$PATH" > $HOME/.profile.d/$MONIKER.sh
 echo done
