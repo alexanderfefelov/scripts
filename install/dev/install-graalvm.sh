@@ -4,10 +4,13 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
+readonly MONIKER=graalvm
 readonly VERSION=20.2.0
-readonly BASE=graalvm-ce-java8
-readonly STUFF=$BASE-linux-amd64-$VERSION.tar.gz
-readonly TARGET_DIR=$HOME/dev/jdk
+readonly BASE_8=graalvm-ce-java8
+readonly BASE_11=graalvm-ce-java11
+readonly STUFF_8=$BASE_8-linux-amd64-$VERSION.tar.gz
+readonly STUFF_11=$BASE_11-linux-amd64-$VERSION.tar.gz
+readonly TARGET_DIR=$HOME/dev/$MONIKER
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2
@@ -19,24 +22,32 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
   cd $TEMP_DIR
 
-  echo -n Downloading...
-  wget --quiet https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$VERSION/$STUFF
-  echo done
+  for java_version in 8 11; do
+    BASE=BASE_$java_version
+    STUFF=STUFF_$java_version
 
-  echo -n Extracting...
-  tar --extract --gzip --file=$STUFF
-  echo done
+    echo -n Downloading GraalVM $java_version...
+    wget --quiet https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-$VERSION/${!STUFF}
+    echo done
 
-  echo -n Installing...
-  mv --force $BASE-$VERSION $TARGET_DIR
-  echo done
+    echo -n Extracting GraalVM $java_version...
+    tar --extract --gzip --file=${!STUFF}
+    echo done
+
+    echo -n Installing GraalVM $java_version...
+    mv --force ${!BASE}-$VERSION $TARGET_DIR
+    echo done
+
+    echo -n Configuring GraalVM $java_version...
+    ln --symbolic $TARGET_DIR/${!BASE}-$VERSION $TARGET_DIR/default-$java_version
+    echo done
+  done
 )
 rm --recursive --force $TEMP_DIR
 
 echo -n Configuring...
-ln --symbolic $TARGET_DIR/$BASE-$VERSION $TARGET_DIR/default
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
 mkdir --parents $HOME/.profile.d
-echo "export JAVA_HOME=$TARGET_DIR/default
-export PATH=\$JAVA_HOME/bin:\$PATH" > $HOME/.profile.d/jdk.sh
+echo "export GRAALVM_8_HOME=$TARGET_DIR/default-8
+export GRAALVM_11_HOME=$TARGET_DIR/default-11" > $HOME/.profile.d/$MONIKER.sh
 echo done
