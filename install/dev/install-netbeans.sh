@@ -9,6 +9,17 @@ readonly VERSION=12.1
 readonly STUFF=netbeans-$VERSION-bin.zip
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
+create_desktop_entry() { # https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+  echo "[Desktop Entry]
+Type=Application
+Categories=Development;
+Name=NetBeans
+Comment=
+Icon=$TARGET_DIR/nb/netbeans.png
+Exec=$TARGET_DIR/bin/netbeans
+Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
+}
+
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2
   exit 1
@@ -29,6 +40,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   echo -n Installing...
   mv --force netbeans/* $TARGET_DIR
+  create_desktop_entry
   echo done
 )
 rm --recursive --force $TEMP_DIR
