@@ -7,7 +7,6 @@ set -e
 readonly MONIKER=balsamiq-mockups
 readonly VERSION=3.5.17
 readonly STUFF=Balsamiq_Mockups_${VERSION}_bundled.zip
-readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
 readonly TARGET_DIR=$HOME/programs/$MONIKER
 readonly START_SCRIPT=$TARGET_DIR/start-$MONIKER.sh
 readonly MIME_TYPE=application/vnd.balsamiq.bmpr
