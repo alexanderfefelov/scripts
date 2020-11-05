@@ -7,16 +7,14 @@ set -e
 readonly MONIKER=xmind
 readonly VERSION=8-update9
 readonly STUFF=xmind-$VERSION-linux.zip
+readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
 readonly TARGET_DIR=$HOME/programs/$MONIKER
 readonly START_SCRIPT=$TARGET_DIR/start-$MONIKER.sh
 readonly WORKSPACE=$TARGET_DIR/workspace
 readonly MIME_TYPE=application/xmind
 
 create_start_script() {
-  echo $TARGET_DIR/XMind_amd64/XMind \
--configuration $TARGET_DIR/XMind_amd64/configuration \
--data $WORKSPACE \
-'"$@"' > $START_SCRIPT
+  echo PATH=\$GRAALVM_8_HOME/bin:\$PATH $TARGET_DIR/XMind_amd64/XMind '"$@"' > $START_SCRIPT
   chmod +x $START_SCRIPT
 }
 
@@ -26,7 +24,7 @@ Type=Application
 Categories=Office;
 Name=XMind
 Comment=
-Icon=$TARGET_DIR/XMind_amd64/configuration/org.eclipse.osgi/983/0/.cp/icons/xmind.48.png
+Icon=$TARGET_DIR/$MONIKER.png
 Exec=$START_SCRIPT %u
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }
@@ -37,15 +35,39 @@ install_mime_type() { # https://www.iana.org/assignments/media-types/application
   <mime-type type="'$MIME_TYPE'">
     <comment>XMind workbook</comment>
     <glob pattern="*.xmind"/>
+    <icon name="'$MONIKER'"/>
     <sub-class-of type="application/xml"/>
-    <generic-icon name="application-xml"/>
   </mime-type>
 </mime-info>' > $MONIKER-mime.xml
   xdg-mime install $MONIKER-mime.xml
 }
 
+install_mime_icon() {
+  xdg-icon-resource install --context mimetypes --size 48 $TARGET_DIR/$MONIKER.png $MONIKER
+}
+
 register_mime_handler() {
   xdg-mime default $MONIKER.desktop $MIME_TYPE
+}
+
+create_config_file() {
+  echo "-configuration
+$TARGET_DIR/XMind_amd64/configuration
+-data
+$WORKSPACE
+-startup
+$TARGET_DIR/plugins/org.eclipse.equinox.launcher_1.3.200.v20160318-1642.jar
+--launcher.library
+$TARGET_DIR/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.400.v20160518-1444
+--launcher.defaultAction
+openFile
+--launcher.GTK_version
+2
+-eclipse.keyring
+@user.home/.xmind/secure_storage_linux
+-vmargs
+-Dfile.encoding=UTF-8
+-Duser.language=en" > $TARGET_DIR/XMind_amd64/XMind.ini
 }
 
 if [ -d "$TARGET_DIR" ]; then
@@ -68,14 +90,16 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   echo -n Installing...
   mv --force dist/* $TARGET_DIR
+  cp --force $INSTALLER_DIR/$MONIKER.png $TARGET_DIR
   create_start_script
   create_desktop_entry
   install_mime_type
+  install_mime_icon
   register_mime_handler
   echo done
 )
 rm --recursive --force $TEMP_DIR
 
 echo -n Configuring...
-echo "-Duser.language=en" >> $TARGET_DIR/XMind_amd64/XMind.ini
+create_config_file
 echo done
