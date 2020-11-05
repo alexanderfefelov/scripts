@@ -73,7 +73,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   echo -n Installing...
   mv --force $EXE $TARGET_DIR
-  cp --force $INSTALLER_DIR/$MONIKER.ico $TARGET_DIR
+  cp --force $INSTALLER_DIR/sumatra-pdf.ico $TARGET_DIR
   create_start_script
   create_desktop_entry
   register_mime_handlers

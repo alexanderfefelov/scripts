@@ -90,7 +90,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   echo -n Installing...
   mv --force dist/* $TARGET_DIR
-  cp --force $INSTALLER_DIR/$MONIKER.png $TARGET_DIR
+  cp --force $INSTALLER_DIR/xmind.png $TARGET_DIR
   create_start_script
   create_desktop_entry
   install_mime_type

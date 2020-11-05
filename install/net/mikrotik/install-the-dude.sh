@@ -49,7 +49,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 
   echo -n Installing...
   mv --force dude/* $TARGET_DIR
-  cp --force $INSTALLER_DIR/$MONIKER.ico $TARGET_DIR
+  cp --force $INSTALLER_DIR/the-dude.ico $TARGET_DIR
   create_start_script
   create_desktop_entry
   echo done
