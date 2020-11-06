@@ -10,7 +10,19 @@ readonly BASE_8=graalvm-ce-java8
 readonly BASE_11=graalvm-ce-java11
 readonly STUFF_8=$BASE_8-linux-amd64-$VERSION.tar.gz
 readonly STUFF_11=$BASE_11-linux-amd64-$VERSION.tar.gz
+readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
 readonly TARGET_DIR=$HOME/dev/$MONIKER
+
+create_desktop_entry() { # https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
+  echo "[Desktop Entry]
+Type=Application
+Categories=Development;
+Name=VisualVM
+Comment=
+Icon=$TARGET_DIR/visualvm.ico
+Exec=$TARGET_DIR/default-11/bin/jvisualvm
+Terminal=false" > $HOME/.local/share/applications/visualvm.desktop
+}
 
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2
@@ -44,6 +56,11 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   done
 )
 rm --recursive --force $TEMP_DIR
+
+echo -n Installing...
+cp --force $INSTALLER_DIR/visualvm.ico $TARGET_DIR
+create_desktop_entry
+echo done
 
 echo -n Configuring...
 sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
