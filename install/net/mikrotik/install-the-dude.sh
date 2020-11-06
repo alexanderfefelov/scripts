@@ -22,7 +22,7 @@ Type=Application
 Categories=Network;
 Name=The Dude
 Comment=
-Icon=$TARGET_DIR/$MONIKER.ico
+Icon=$TARGET_DIR/the-dude.ico
 Exec=$START_SCRIPT
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }

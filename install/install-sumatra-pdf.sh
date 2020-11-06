@@ -31,7 +31,7 @@ Type=Application
 Categories=Office;
 Name=Sumatra PDF
 Comment=
-Icon=$TARGET_DIR/$MONIKER.ico
+Icon=$TARGET_DIR/sumatra-pdf.ico
 Exec=$START_SCRIPT %u
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }

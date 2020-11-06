@@ -22,7 +22,7 @@ Type=Application
 Categories=Network;
 Name=WinBox
 Comment=
-Icon=$TARGET_DIR/$MONIKER.ico
+Icon=$TARGET_DIR/winbox.ico
 Exec=$START_SCRIPT
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }

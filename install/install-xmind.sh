@@ -24,7 +24,7 @@ Type=Application
 Categories=Office;
 Name=XMind
 Comment=
-Icon=$TARGET_DIR/$MONIKER.png
+Icon=$TARGET_DIR/xmind.png
 Exec=$START_SCRIPT %u
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }
