@@ -6,11 +6,11 @@ set -e
 
 readonly MONIKER=sumatra-pdf
 readonly VERSION=3.2
-readonly STUFF=SumatraPDF-$VERSION.zip
+readonly STUFF=SumatraPDF-$VERSION-64.zip
 readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
 readonly TARGET_DIR=$HOME/programs/$MONIKER
 readonly START_SCRIPT=$TARGET_DIR/start-$MONIKER.sh
-readonly EXE=SumatraPDF-$VERSION-32.exe
+readonly EXE=SumatraPDF-$VERSION-64.exe
 readonly MIME_TYPES="
   application/epub+zip
   application/pdf
