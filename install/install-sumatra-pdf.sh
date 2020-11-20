@@ -49,7 +49,7 @@ UiLanguage = en
 EbookUI [
   # If true, the UI used for PDF documents will be used for ebooks as well (enables printing
   # and searching, disables automatic reflow)
-  UseFixedPageUI = true
+  UseFixedPageUI = false
 ]' > $TARGET_DIR/SumatraPDF-settings.txt
 }
 
