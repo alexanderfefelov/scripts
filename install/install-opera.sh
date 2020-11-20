@@ -16,5 +16,13 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   echo "deb https://deb.opera.com/opera-stable/ stable non-free" > /etc/apt/sources.list.d/opera-stable.list
   apt-get -qq update
   apt-get -qq install opera-stable
+
+  # https://www.reddit.com/r/operabrowser/wiki/opera/linux_libffmpeg_config
+  readonly LIBFFMPEG_VERSION=0.47.2
+  readonly LIBFFMPEG_STUFF=$LIBFFMPEG_VERSION-linux-x64.zip
+  readonly LIBFFMPEG_TARGET_DIR=/usr/lib/x86_64-linux-gnu/opera/lib_extra
+  mkdir --parents $LIBFFMPEG_TARGET_DIR
+  wget --quiet https://github.com/iteufel/nwjs-ffmpeg-prebuilt/releases/download/$LIBFFMPEG_VERSION/$LIBFFMPEG_STUFF
+  unzip -qq $LIBFFMPEG_STUFF -d $LIBFFMPEG_TARGET_DIR
 )
 rm --recursive --force $TEMP_DIR
