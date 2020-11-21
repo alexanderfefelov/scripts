@@ -4,11 +4,9 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-# Elevate privileges
-[ $UID -eq 0 ] || exec sudo bash "$0" "$@"
-
-apt-get -qq install \
+sudo apt-get -qq install \
   apache2-utils `# Bcz htpasswd` \
+  bat \
   emacs \
   figlet \
   git \
@@ -42,3 +40,6 @@ apt-get -qq install \
   mysql-client \
   postgresql-client \
   redis-tools
+
+mkdir --parents $HOME/bin
+ln --force --symbolic /usr/bin/batcat $HOME/bin/bat
