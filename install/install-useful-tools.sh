@@ -24,6 +24,7 @@ apt-get -qq install \
   nmon \
   openssh-server \
   pdf2djvu \
+  petname \
   pwgen \
   samba-common-bin `# Bcz smbpasswd` \
   snmp \
