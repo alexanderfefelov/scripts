@@ -25,3 +25,8 @@ wget --quiet --directory-prefix=$TARGET_DIR https://dl.winehq.org/wine/wine-mono
 echo done
 
 wineboot --update
+
+echo '
+[Software\\Wine\\X11 Driver]
+"Decorated"="N"
+' >> $HOME/.wine/user.reg
