@@ -25,6 +25,7 @@ sudo apt-get -qq install \
   petname \
   pwgen \
   samba-common-bin `# Bcz smbpasswd` \
+  shellcheck \
   snmp \
   snmp-mibs-downloader \
   smitools \
