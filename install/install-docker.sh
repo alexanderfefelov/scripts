@@ -21,3 +21,4 @@ apt-get -qq install \
   docker-ce \
   docker-ce-cli \
   containerd.io
+echo '{ "features": { "buildkit": true } }' > /etc/docker/daemon.json
