@@ -26,6 +26,7 @@ echo done
 
 wineboot --update
 
+sleep 15
 echo '
 [Software\\Wine\\X11 Driver]
 "Decorated"="N"
