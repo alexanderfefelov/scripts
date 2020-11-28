@@ -42,5 +42,4 @@ sudo apt-get -qq install \
   postgresql-client \
   redis-tools
 
-mkdir --parents $HOME/bin
 ln --force --symbolic /usr/bin/batcat $HOME/bin/bat

@@ -63,8 +63,6 @@ create_desktop_entry
 echo done
 
 echo -n Configuring...
-sudo cp --force .profile.d.sh /etc/profile.d/profile.d.sh
-mkdir --parents $HOME/.profile.d
 echo "export GRAALVM_8_HOME=$TARGET_DIR/default-8
 export GRAALVM_11_HOME=$TARGET_DIR/default-11" > $HOME/.profile.d/$MONIKER.sh
 echo done

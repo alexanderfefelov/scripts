@@ -28,7 +28,6 @@ fi
 
 mkdir --parents $TARGET_DIR
 
-mkdir --parents $HOME/bin
 wget --quiet --output-document=$TARGET_DIR/$MONIKER https://github.com/balena-io/etcher/releases/download/v$VERSION/$STUFF
 chmod +x $TARGET_DIR/$MONIKER
 cp --force $INSTALLER_DIR/etcher.png $TARGET_DIR
