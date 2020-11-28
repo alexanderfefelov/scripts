@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=idea
-readonly VERSION=2020.2.3
+readonly VERSION=2020.2.4
 readonly STUFF=ideaIU-$VERSION.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
@@ -39,7 +39,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   echo done
 
   echo -n Installing...
-  mv --force idea-IU-202.7660.26/* $TARGET_DIR
+  mv --force idea-IU-*/* $TARGET_DIR
   create_desktop_entry
   echo done
 )
