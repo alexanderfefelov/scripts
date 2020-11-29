@@ -9,7 +9,7 @@ sudo apt-get -qq install \
   bat \
   emacs \
   figlet \
-  git \
+  git git-lfs \
   htop \
   httpie \
   jq \
