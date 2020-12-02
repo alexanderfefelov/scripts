@@ -10,6 +10,7 @@ sudo apt-get -qq install \
   emacs \
   figlet \
   git git-lfs \
+  graphviz \
   htop \
   httpie \
   jq \
