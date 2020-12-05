@@ -38,6 +38,7 @@ sudo apt-get -qq install \
   uuid-runtime `# Bcz uuidgen` \
   whois `# Bcz mkpasswd` \
   \
+  clickhouse-client \
   influxdb-client \
   mongodb-clients \
   mysql-client \
