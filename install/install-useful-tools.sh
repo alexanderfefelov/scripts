@@ -6,6 +6,7 @@ set -e
 
 sudo apt-get -qq install \
   apache2-utils `# Bcz htpasswd` \
+  asciinema \
   bat \
   emacs \
   figlet \
