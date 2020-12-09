@@ -64,5 +64,8 @@ echo done
 
 echo -n Configuring...
 echo "export GRAALVM_8_HOME=$TARGET_DIR/default-8
-export GRAALVM_11_HOME=$TARGET_DIR/default-11" > $HOME/.profile.d/$MONIKER.sh
+export GRAALVM_11_HOME=$TARGET_DIR/default-11
+
+export JAVA_HOME=\$GRAALVM_11_HOME
+export PATH=\$JAVA_HOME/bin:\$PATH" > $HOME/.profile.d/$MONIKER.sh
 echo done
