@@ -26,6 +26,7 @@ sudo apt-get -qq install \
   pdf2djvu \
   petname \
   pssh \
+  pv \
   pwgen \
   samba-common-bin `# Bcz smbpasswd` \
   shellcheck \
