@@ -14,6 +14,7 @@ sudo apt-get -qq install \
   graphviz \
   htop \
   httpie \
+  inxi \
   jq \
   libtext-lorem-perl \
   mc \
