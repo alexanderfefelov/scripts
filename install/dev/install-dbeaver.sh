@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=dbeaver
-readonly VERSION=7.3.0
+readonly VERSION=7.3.1
 readonly STUFF=dbeaver-ce-$VERSION-linux.gtk.x86_64.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
