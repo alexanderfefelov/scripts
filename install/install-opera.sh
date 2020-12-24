@@ -4,27 +4,34 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-# Elevate privileges
-[ $UID -eq 0 ] || exec sudo bash "$0" "$@"
+readonly CONFIG_DIR=$HOME/.config/opera
 
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
   cd $TEMP_DIR
 
   wget --quiet https://deb.opera.com/archive.key
-  apt-key add archive.key
-  echo "deb https://deb.opera.com/opera-stable/ stable non-free" > /etc/apt/sources.list.d/opera-stable.list
-  apt-get -qq update
-  apt-get -qq install opera-stable
+  sudo apt-key add archive.key
+  echo "deb https://deb.opera.com/opera-stable/ stable non-free" | sudo tee /etc/apt/sources.list.d/opera-stable.list > /dev/null
+  sudo apt-get -qq update
+  sudo apt-get -qq install opera-stable
 
   # https://www.reddit.com/r/operabrowser/wiki/opera/linux_libffmpeg_config
   echo -n Installing libffmpeg...
   readonly LIBFFMPEG_VERSION=0.47.2
   readonly LIBFFMPEG_STUFF=$LIBFFMPEG_VERSION-linux-x64.zip
   readonly LIBFFMPEG_TARGET_DIR=/usr/lib/x86_64-linux-gnu/opera/lib_extra
-  mkdir --parents $LIBFFMPEG_TARGET_DIR
+  sudo mkdir --parents $LIBFFMPEG_TARGET_DIR
   wget --quiet https://github.com/iteufel/nwjs-ffmpeg-prebuilt/releases/download/$LIBFFMPEG_VERSION/$LIBFFMPEG_STUFF
-  unzip -qq -uo $LIBFFMPEG_STUFF -d $LIBFFMPEG_TARGET_DIR
+  sudo unzip -qq -uo $LIBFFMPEG_STUFF -d $LIBFFMPEG_TARGET_DIR
   echo done
 )
 rm --recursive --force $TEMP_DIR
+
+if [ ! -d "$CONFIG_DIR" ]; then
+  echo -n Configuring...
+  mkdir --parents $CONFIG_DIR
+  cp opera-preferences.json $CONFIG_DIR/Preferences
+  echo "{}" > $CONFIG_DIR/Bookmarks
+  echo done
+fi

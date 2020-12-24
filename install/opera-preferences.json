@@ -1,0 +1,120 @@
+{
+
+  "adblocker": {
+    "enabled": true,
+    "trackers": {
+      "enabled": true
+    }
+  },
+
+  "bookmarks": {
+    "partners": {
+      "participating_user": true,
+      "receiving_enabled": false
+    }
+  },
+
+  "browser_sidebar": {
+    "panel_enabled": {
+      "history": false
+    }
+  },
+
+  "continue_shopping": {
+    "amazon_section_enabled": false,
+    "booking_section_enabled": false
+  },
+
+  "speeddial": {
+    "bigger_tiles_applicable_on_high_resolution": true,
+    "disable_animations": true,
+    "hide_search_box": true,
+    "partners": {
+      "migration_not_needed": true
+    }
+  },
+
+  "startpage": {
+    "show_news_container": false
+  },
+
+  "statistics": {
+    "collection_asked": true,
+    "collection_enabled": true
+  },
+
+  "themes": {
+    "enabled": false,
+    "selected_id": "bundled/default_dark_theme"
+  },
+
+  "ui": {
+    "browser": {
+      "sidebar": {
+        "item_prefs": {
+          "visibility": {
+            "Activity": true,
+            "Amazon": false,
+            "AmazonPromotion": true,
+            "Bookmarks": true,
+            "ContextMenu": true,
+            "CryptoWallet": true,
+            "CustomSitePreview": false,
+            "CustomSite_1": false,
+            "CustomSite_2": false,
+            "CustomSite_3": false,
+            "CustomSite_4": false,
+            "CustomSite_5": false,
+            "Discord": true,
+            "Downloads": true,
+            "Extensions": false,
+            "FacebookMessenger": false,
+            "GamingCorner": true,
+            "History": true,
+            "Instagram": false,
+            "News": false,
+            "OperaTouch": false,
+            "Player": false,
+            "Separator": true,
+            "Settings": true,
+            "Snap": false,
+            "SpeedDial": false,
+            "Telegram": false,
+            "Tutorials": true,
+            "Twitter": true,
+            "VKontakte": false,
+            "Whatsapp": true,
+            "Workspace_0": true,
+            "Workspace_1": true,
+            "Workspace_2": false,
+            "Workspace_3": false,
+            "Workspace_4": false,
+            "Workspace_5": false,
+            "Workspace_6": false,
+            "Workspace_7": false,
+            "Workspace_8": false,
+            "Workspace_9": false,
+            "Workspace_10": false,
+            "Workspace_11": false,
+            "Workspace_12": false,
+            "Workspace_13": false,
+            "Workspace_14": false,
+            "Workspace_15": false,
+            "Workspace_16": false,
+            "Workspace_17": false,
+            "Workspace_18": false,
+            "Workspace_19": false,
+            "Workspace_20": false,
+            "Workspace_21": false,
+            "Workspace_22": false,
+            "Workspace_23": false
+          }
+        }
+      }
+    },
+    "dark_skin": true,
+    "search_popup_enabled": false,
+    "show_full_url": true
+  }
+
+}
