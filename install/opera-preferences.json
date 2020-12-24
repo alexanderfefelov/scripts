@@ -25,7 +25,25 @@
     "booking_section_enabled": false
   },
 
+  "easy_share": {
+    "enabled": false
+  },
+
+  "personal_news": {
+    "history_recommendations_enabled": false,
+    "notification_interval_minutes": 0
+  },
+
+  "rich_hints": {
+    "marketplace_enabled": false
+  },
+
+  "search_engines_private": {
+    "opted_in": false
+  },
+
   "speeddial": {
+    "bigger_tiles": true,
     "bigger_tiles_applicable_on_high_resolution": true,
     "disable_animations": true,
     "hide_search_box": true,
@@ -117,7 +135,8 @@
     },
     "dark_skin": true,
     "search_popup_enabled": false,
-    "show_full_url": true
+    "show_full_url": true,
+    "show_tab_preview": true
   }
 
 }
