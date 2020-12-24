@@ -1,5 +1,11 @@
 {
 
+  "Keybindings": {
+    "Settings": {
+      "AdvancedEnabled": true
+    }
+  },
+
   "adblocker": {
     "enabled": true,
     "trackers": {
