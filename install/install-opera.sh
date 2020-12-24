@@ -32,6 +32,7 @@ if [ ! -d "$CONFIG_DIR" ]; then
   echo -n Configuring...
   mkdir --parents $CONFIG_DIR
   cp opera-preferences.json $CONFIG_DIR/Preferences
+  cp opera-local-state.json $CONFIG_DIR/"Local State"
   echo "{}" > $CONFIG_DIR/Bookmarks
   echo done
 fi

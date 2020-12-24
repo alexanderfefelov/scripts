@@ -35,6 +35,9 @@
   },
 
   "startpage": {
+    "search_engine_suggestion_next_appearance": "1678900000000",
+    "search_engine_suggestion_previous_action": "DISMISSED",
+    "search_engine_suggestion_tries": 1,
     "show_news_container": false
   },
 
