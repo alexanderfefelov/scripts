@@ -8,6 +8,7 @@ sudo apt-get -qq install \
   apache2-utils `# Bcz htpasswd` \
   asciinema \
   bat \
+  certbot \
   dos2unix \
   emacs \
   figlet \
