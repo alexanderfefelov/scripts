@@ -17,7 +17,7 @@ Categories=Utility;
 Name=Etcher
 Comment=
 Icon=$TARGET_DIR/etcher.png
-Exec=$TARGET_DIR/$MONIKER
+Exec=$TARGET_DIR/etcher
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }
 
