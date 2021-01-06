@@ -17,7 +17,7 @@ Categories=Development;
 Name=Cutter
 Comment=
 Icon=$TARGET_DIR/cutter.svg
-Exec=$TARGET_DIR/$MONIKER
+Exec=$TARGET_DIR/cutter
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }
 
