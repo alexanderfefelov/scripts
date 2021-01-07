@@ -10,4 +10,4 @@ readonly STUFF=tokei-x86_64-unknown-linux-gnu.tar.gz
 wget --quiet \
   https://github.com/XAMPPRocky/tokei/releases/download/v$VERSION/$STUFF \
   --output-document=- \
-  | tar --extract --gunzip --directory=$HOME/bin
+| tar --extract --gunzip --directory=$HOME/bin

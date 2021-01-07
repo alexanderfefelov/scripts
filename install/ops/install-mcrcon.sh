@@ -10,4 +10,4 @@ readonly STUFF=mcrcon-$VERSION-linux-x86-64.tar.gz
 wget --quiet \
   https://github.com/Tiiffi/mcrcon/releases/download/v$VERSION/$STUFF \
   --output-document=- \
-  | tar --extract --gunzip --directory=$HOME/bin --strip-components 1 mcrcon-$VERSION-linux-x86-64/mcrcon
+| tar --extract --gunzip --directory=$HOME/bin --strip-components 1 mcrcon-$VERSION-linux-x86-64/mcrcon
