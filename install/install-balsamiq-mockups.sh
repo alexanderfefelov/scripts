@@ -5,9 +5,8 @@
 set -e
 
 readonly MONIKER=balsamiq-mockups
-readonly VERSION=3.5
-readonly BUILD=17
-readonly STUFF=Balsamiq_Mockups_$VERSION.${BUILD}_bundled.zip
+readonly VERSION=3
+readonly STUFF=Balsamiq_Mockups-$VERSION-Win-Bundled.zip
 readonly TARGET_DIR=$HOME/programs/$MONIKER
 readonly START_SCRIPT=$TARGET_DIR/start-$MONIKER.sh
 readonly MIME_TYPE=application/vnd.balsamiq.bmpr
@@ -59,7 +58,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   cd $TEMP_DIR
 
   echo -n Downloading...
-  wget --quiet https://build_archives.s3.amazonaws.com/win/$VERSION/$STUFF
+  wget --quiet https://build_archives.s3.amazonaws.com/Mockups/Mockups-$VERSION/$STUFF
   echo done
 
   echo -n Extracting...
@@ -67,7 +66,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   echo done
 
   echo -n Installing...
-  mv --force Balsamiq_Mockups_3/* $TARGET_DIR
+  mv --force Balsamiq_Mockups_$VERSION/* $TARGET_DIR
   create_start_script
   create_desktop_entry
   install_mime_type
