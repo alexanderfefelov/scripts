@@ -32,7 +32,7 @@ rm --recursive --force $TEMP_DIR
 
 echo -n Configuring...
 echo "export DOTNET_CORE_SDK_HOME=$TARGET_DIR
-export PATH=\$DOTNET_CORE_SDK_HOME:\$PATH
+export PATH=\$DOTNET_CORE_SDK_HOME:\$HOME/.dotnet/tools:\$PATH
 
 export DOTNET_ROOT=\$DOTNET_CORE_SDK_HOME" > $HOME/.profile.d/$MONIKER.sh
 echo done
