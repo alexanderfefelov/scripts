@@ -4,7 +4,7 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly MONIKER=dotnet-core-sdk
+readonly MONIKER=dotnet-sdk
 readonly VERSION=5.0.102
 readonly STUFF=dotnet-sdk-$VERSION-linux-x64.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
@@ -20,7 +20,6 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   cd $TEMP_DIR
 
   echo -n Downloading...
-
   wget --quiet https://download.visualstudio.microsoft.com/download/pr/7f736160-9f34-4595-8d72-13630c437aef/b9c4513afb0f8872eb95793c70ac52f6/$STUFF
   echo done
 
@@ -31,10 +30,10 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 rm --recursive --force $TEMP_DIR
 
 echo -n Configuring...
-echo "export DOTNET_CORE_SDK_HOME=$TARGET_DIR
-export PATH=\$DOTNET_CORE_SDK_HOME:\$HOME/.dotnet/tools:\$PATH
+echo "export DOTNET_SDK_HOME=$TARGET_DIR
+export PATH=\$DOTNET_SDK_HOME:\$HOME/.dotnet/tools:\$PATH
 
-export DOTNET_ROOT=\$DOTNET_CORE_SDK_HOME" > $HOME/.profile.d/$MONIKER.sh
+export DOTNET_ROOT=\$DOTNET_SDK_HOME" > $HOME/.profile.d/$MONIKER.sh
 echo done
 
 $TARGET_DIR/dotnet --info
