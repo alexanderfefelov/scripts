@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=graalvm
-readonly VERSION=20.3.0
+readonly VERSION=21.0.0
 readonly BASE_8=graalvm-ce-java8
 readonly BASE_11=graalvm-ce-java11
 readonly STUFF_8=$BASE_8-linux-amd64-$VERSION.tar.gz
