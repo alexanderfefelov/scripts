@@ -31,6 +31,7 @@ sudo apt-get -qq install \
   pssh \
   pv \
   pwgen \
+  rlwrap \
   samba-common-bin `# Bcz smbpasswd` \
   shellcheck \
   snmp \
