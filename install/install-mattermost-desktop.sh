@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=mattermost-desktop
-readonly VERSION=4.6.1
+readonly VERSION=4.6.2
 readonly STUFF=mattermost-desktop-$VERSION-linux-x64.tar.gz
 readonly TARGET_DIR=$HOME/programs/$MONIKER
 
