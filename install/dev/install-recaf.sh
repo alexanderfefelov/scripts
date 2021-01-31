@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=recaf
-readonly VERSION=2.16.6
+readonly VERSION=2.17.4
 readonly STUFF=recaf-$VERSION-J8-jar-with-dependencies.jar
 readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
 readonly TARGET_DIR=$HOME/dev/$MONIKER
