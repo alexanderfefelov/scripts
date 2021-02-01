@@ -32,6 +32,8 @@ CMD_TEMPLATE = re.sub('\s*\|', '', '''
     |  --preload=DLINK-ID-REC-MIB
     |  --preload=TIMERANGE-MIB \
     | \
+    |  --preload=EXTREME-BASE-MIB \
+    | \
     |  --format={} \
     |  --keep-going \
     |  --level=5 \
