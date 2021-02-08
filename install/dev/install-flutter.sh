@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=flutter
-readonly VERSION=1.22.3
+readonly VERSION=1.22.6
 readonly STUFF=flutter_linux_$VERSION-stable.tar.xz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
