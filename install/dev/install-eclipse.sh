@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=eclipse
-readonly VERSION=2020-09
+readonly VERSION=2020-12
 readonly STUFF=eclipse-java-$VERSION-R-linux-gtk-x86_64.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
