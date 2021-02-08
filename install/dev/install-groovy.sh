@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=groovy
-readonly VERSION=3.0.6
+readonly VERSION=3.0.7
 readonly STUFF=apache-groovy-binary-$VERSION.zip
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
