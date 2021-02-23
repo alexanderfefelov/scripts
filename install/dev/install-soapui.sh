@@ -9,17 +9,6 @@ readonly VERSION=5.6.0
 readonly STUFF=SoapUI-x64-$VERSION.sh
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
-create_desktop_entry() { # https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html
-  echo "[Desktop Entry]
-Type=Application
-Categories=Development;
-Name=DBeaver
-Comment=
-Icon=$TARGET_DIR/dbeaver.png
-Exec=$TARGET_DIR/dbeaver
-Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
-}
-
 if [ -d "$TARGET_DIR" ]; then
   echo Directory exists: $TARGET_DIR >&2
   exit 1
