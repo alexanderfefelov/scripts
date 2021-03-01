@@ -4,9 +4,8 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly MONIKER=soapui
-readonly VERSION=5.6.0
-readonly STUFF=SoapUI-x64-$VERSION.sh
+readonly MONIKER=visual-paradigm
+readonly STUFF=Visual_Paradigm_CE_Linux64.sh
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
 if [ -d "$TARGET_DIR" ]; then
@@ -20,7 +19,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   cd $TEMP_DIR
 
   echo -n Downloading...
-  wget --quiet https://s3.amazonaws.com/downloads.eviware/soapuios/$VERSION/$STUFF
+  wget --quiet https://www.visual-paradigm.com/downloads/vpce/$STUFF
   echo done
 
   echo -n Installing...
