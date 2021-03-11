@@ -21,27 +21,27 @@ SOURCE_ROOT_DIR = 'mibs'
 TARGET_ROOT_DIR = 'out/target'
 LOG_ROOT_DIR = 'out/log'
 CMD_TEMPLATE = re.sub('\s*\|', '', '''
-    |smidump \
-    |  --preload=BRIDGE-MIB \
-    |  --preload=IANA-ADDRESS-FAMILY-NUMBERS-MIB \
-    |  --preload=IF-MIB \
-    |  --preload=INET-ADDRESS-MIB \
-    |  --preload=Q-BRIDGE-MIB \
-    |  --preload=RFC-1215 \
-    |  --preload=SNMP-FRAMEWORK-MIB \
-    |  --preload=SNMPv2-SMI \
-    |  --preload=SNMPv2-TC \
-    | \
-    |  --preload=CISCO-SMI \
-    | \
+    |smidump
+    |  --preload=BRIDGE-MIB
+    |  --preload=IANA-ADDRESS-FAMILY-NUMBERS-MIB
+    |  --preload=IF-MIB
+    |  --preload=INET-ADDRESS-MIB
+    |  --preload=Q-BRIDGE-MIB
+    |  --preload=RFC-1215
+    |  --preload=SNMP-FRAMEWORK-MIB
+    |  --preload=SNMPv2-SMI
+    |  --preload=SNMPv2-TC
+    |
+    |  --preload=CISCO-SMI
+    |
     |  --preload=DLINK-ID-REC-MIB
-    |  --preload=TIMERANGE-MIB \
-    | \
-    |  --preload=EXTREME-BASE-MIB \
-    | \
-    |  --format={} \
-    |  --keep-going \
-    |  --level=5 \
+    |  --preload=TIMERANGE-MIB
+    |
+    |  --preload=EXTREME-BASE-MIB
+    |
+    |  --format={}
+    |  --keep-going
+    |  --level=5
     |  "{}"
     |  > {}
     |  2> {}
