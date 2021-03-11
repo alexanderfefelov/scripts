@@ -12,7 +12,8 @@ VENDORS = [
     'MikroTik',
     'NAG',
     'NetPing',
-    'TFortis'
+    'TFortis',
+    'TP-Link'
 ]
 SOURCE_ROOT_DIR = 'mibs'
 TARGET_ROOT_DIR = 'out/target'
