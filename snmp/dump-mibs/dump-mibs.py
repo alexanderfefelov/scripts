@@ -9,6 +9,7 @@ from pathlib import Path
 VENDORS = [
     'D-Link',
     'Extreme Networks',
+    'Juniper Networks',
     'MikroTik',
     'NAG',
     'NetPing',
