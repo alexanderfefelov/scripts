@@ -74,6 +74,7 @@ for vendor in VENDORS:
     vendor_dir = '{}/{}'.format(SOURCE_ROOT_DIR, vendor)
     for dir_path, _, filenames in os.walk(vendor_dir):
         for filename in filenames:
-            if filename.lower().endswith('.mib'):
+            lower_filename = filename.lower()
+            if lower_filename.endswith('.mib') or lower_filename.endswith('.my') or lower_filename.endswith('.txt'):
                 do_work(dir_path, filename, 'python', 'py')
                 do_work(dir_path, filename, 'tree', 'tree.txt')
