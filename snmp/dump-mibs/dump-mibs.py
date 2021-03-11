@@ -7,6 +7,7 @@ from pathlib import Path
 
 
 VENDORS = [
+    'Cisco',
     'D-Link',
     'Extreme',
     'Juniper',
