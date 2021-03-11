@@ -39,6 +39,8 @@ CMD_TEMPLATE = re.sub('\s*\|', '', '''
     |
     |  --preload=EXTREME-BASE-MIB
     |
+    |  --preload=JUNIPER-SMI
+    |
     |  --format={}
     |  --keep-going
     |  --level=5
