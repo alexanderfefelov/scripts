@@ -32,6 +32,8 @@ CMD_TEMPLATE = re.sub('\s*\|', '', '''
     |  --preload=SNMPv2-SMI \
     |  --preload=SNMPv2-TC \
     | \
+    |  --preload=CISCO-SMI \
+    | \
     |  --preload=DLINK-ID-REC-MIB
     |  --preload=TIMERANGE-MIB \
     | \
