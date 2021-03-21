@@ -5,8 +5,8 @@
 set -e
 
 readonly MONIKER=cuba-studio
-readonly VERSION_1=15.1-202
-readonly VERSION_2=2020.2-15.1
+readonly VERSION_1=15.3-202
+readonly VERSION_2=2020.2-15.3
 readonly STUFF=cuba-studio-$VERSION_2.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
