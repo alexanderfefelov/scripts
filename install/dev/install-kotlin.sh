@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=kotlin
-readonly VERSION=1.4.10
+readonly VERSION=1.4.31
 readonly STUFF=kotlin-compiler-$VERSION.zip
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
