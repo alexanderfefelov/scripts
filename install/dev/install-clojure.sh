@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=clojure
-readonly VERSION=1.10.2.774
+readonly VERSION=1.10.3.814
 readonly STUFF=linux-install-$VERSION.sh
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
