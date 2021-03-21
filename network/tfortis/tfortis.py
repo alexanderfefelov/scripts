@@ -7,10 +7,19 @@ from requests.auth import HTTPDigestAuth
 import sys
 
 
+REGEXP_VLANS = r'<b>VLAN List</b><br><table.*?>(.*?)</table>'
 REGEXP_PORT_STATISTICS = r'<b>Port Statistics</b><table.*?>(.*?)</table>'
 REGEXP_POE_STATUS = r'<b>PoE Status</b><table.*?>(.*?)</table>'
 REGEXP_TR = r'<tr.*?>(.*?)</tr>'
 REGEXP_TD = r'<td.*?>(.*?)</td>'
+
+
+def process_vlans(host, username, password, regexp):
+   url = 'http://%s/vlan/VLAN_8021q.shtml' % host
+   response = requests.post(url, auth=HTTPDigestAuth(username, password))
+   html = response.text
+   table_body = re.findall(regexp, html)[0]
+   _process_table_body_vlans(table_body[1:])
 
 
 def process_port_info(host, username, password, port, regexp):
@@ -18,18 +27,19 @@ def process_port_info(host, username, password, port, regexp):
    response = requests.post(url, auth=HTTPDigestAuth(username, password))
    html = response.text
    table_body = re.findall(regexp, html)[0]
-   process_table_body(table_body)
+   _process_table_body_port_info(table_body[1:])
 
 
-def process_table_body(table_body):
+def _process_table_body_vlans(table_body):
     for r in re.findall(REGEXP_TR, table_body):
         d = re.findall(REGEXP_TD, r)
-        if not d[0]:
-            column1_name = d[1]
-            column2_name = d[2]
-            continue
-        print(d[0], column1_name, d[1])
-        print(d[0], column2_name, d[2])
+        print(d[0], d[1], d[2], d[3], d[4])
+
+
+def _process_table_body_port_info(table_body):
+    for r in re.findall(REGEXP_TR, table_body):
+        d = re.findall(REGEXP_TD, r)
+        print(d[0], d[1], d[2])
 
 
 def abort(message):
@@ -42,7 +52,9 @@ if __name__ == '__main__':
     host = sys.argv[2]
     username = sys.argv[3]
     password = sys.argv[4]
-    if command == 'show-port-statistics':
+    if command == 'show-vlans':
+        process_vlans(host, username, password, REGEXP_VLANS)
+    elif command == 'show-port-statistics':
         port = int(sys.argv[5])
         process_port_info(host, username, password, port, REGEXP_PORT_STATISTICS)
     elif command == 'show-poe-status':
