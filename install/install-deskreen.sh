@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=deskreen
-readonly VERSION=1.0.5
+readonly VERSION=1.0.11
 readonly STUFF=Deskreen-$VERSION.AppImage
 
 readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
