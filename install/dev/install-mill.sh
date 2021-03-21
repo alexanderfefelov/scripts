@@ -4,10 +4,10 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly VERSION=0.9.3
-readonly STUFF=0.9.3
+readonly VERSION=0.9.5
+readonly STUFF=0.9.5
 
 wget --quiet \
-  https://github.com/lihaoyi/mill/releases/download/$VERSION/$STUFF \
+  https://github.com/com-lihaoyi/mill/releases/download/$VERSION/$STUFF \
   --output-document=$HOME/bin/mill
 chmod +x $HOME/bin/mill
