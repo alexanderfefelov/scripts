@@ -4,11 +4,17 @@
 
 TFortis Scraper is a tool to scrape viable data from TFortis switches.
 
+TFortis Scraper is capable to show:
+
+- VLANs,
+- PoE status,
+- port statistics.
+
 ## Why
 
 We need this because the very poor TFortis' SNMP implementation.
 
-# Where
+## Where
 
 Scraper was tested with the following  models:
 
