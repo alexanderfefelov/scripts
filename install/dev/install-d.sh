@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=d
-readonly VERSION=2.095.0
+readonly VERSION=2.096.0
 readonly STUFF=dmd.$VERSION.linux.tar.xz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
