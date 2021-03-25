@@ -15,7 +15,8 @@ VENDORS = [
     'NAG',
     'NetPing',
     'TFortis',
-    'TP-Link'
+    'TP-Link',
+    'ZyXEL'
 ]
 SOURCE_ROOT_DIR = 'mibs'
 TARGET_ROOT_DIR = 'out/target'
