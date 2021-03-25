@@ -25,6 +25,7 @@ CMD_TEMPLATE = re.sub('\s*\|', '', '''
     |smidump
     |  --preload=BRIDGE-MIB
     |  --preload=IANA-ADDRESS-FAMILY-NUMBERS-MIB
+    |  --preload=IEEE8021-CFM-MIB
     |  --preload=IF-MIB
     |  --preload=INET-ADDRESS-MIB
     |  --preload=Q-BRIDGE-MIB
