@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-from Extreme_EXTREME_BASE_MIB_mib import MIB
+
+from mibs.Extreme_EXTREME_BASE_MIB_mib import MIB
 
 
 product_oid = MIB['nodes']['extremeProduct']['oid']

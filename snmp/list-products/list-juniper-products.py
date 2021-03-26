@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-from Juniper_mib_jnx_chas_defines_txt import MIB
+
+from mibs.Juniper_mib_jnx_chas_defines_txt import MIB
 
 
 product_oid = MIB['nodes']['jnxProductName']['oid']

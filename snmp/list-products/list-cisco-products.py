@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-from Cisco_CISCO_PRODUCTS_MIB_mib import MIB
+
+from mibs.Cisco_CISCO_PRODUCTS_MIB_mib import MIB
 
 
 for node in MIB['nodes']:
