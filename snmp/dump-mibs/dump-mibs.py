@@ -43,6 +43,8 @@ CMD_TEMPLATE = re.sub('\s*\|', '', '''
     |
     |  --preload=JUNIPER-SMI
     |
+    |  --preload=TPLINK-MIB
+    |
     |  --format={}
     |  --keep-going
     |  --level=5
