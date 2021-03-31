@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=yed
-readonly VERSION=3.20.1
+readonly VERSION=3.21.1
 readonly STUFF=yEd-$VERSION.zip
 readonly TARGET_DIR=$HOME/programs/$MONIKER
 readonly START_SCRIPT=$TARGET_DIR/start-$MONIKER.sh
