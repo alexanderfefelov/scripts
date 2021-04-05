@@ -22,6 +22,7 @@ apt-get -qq install \
   docker-ce-cli \
   containerd.io
 echo '{
+  "data-root": "/var/lib/docker",
   "features": {
     "buildkit": true
   }
