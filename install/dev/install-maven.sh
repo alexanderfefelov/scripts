@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=maven
-readonly VERSION=3.6.3
+readonly VERSION=3.8.1
 readonly STUFF=apache-maven-$VERSION-bin.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
