@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=idea
-readonly VERSION=2020.3.3
+readonly VERSION=2021.1
 readonly STUFF=ideaIU-$VERSION.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
