@@ -7,7 +7,7 @@ set -e
 # Elevate privileges
 [ $UID -eq 0 ] || exec sudo bash "$0" "$@"
 
-readonly VERSION=2.200
+readonly VERSION=2.225
 readonly STUFF=JetBrainsMono-$VERSION.zip
 
 readonly TARGET_DIR=/usr/share/fonts/truetype/jetbrains-mono
