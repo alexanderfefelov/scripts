@@ -4,7 +4,7 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly VERSION=0.9.0
+readonly VERSION=0.9.3
 readonly STUFF=Linux64.zip
 
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
