@@ -5,11 +5,13 @@
 set -e
 
 readonly MONIKER=graalvm
-readonly VERSION=21.0.0
+readonly VERSION=21.1.0
 readonly BASE_8=graalvm-ce-java8
 readonly BASE_11=graalvm-ce-java11
+readonly BASE_16=graalvm-ce-java16
 readonly STUFF_8=$BASE_8-linux-amd64-$VERSION.tar.gz
 readonly STUFF_11=$BASE_11-linux-amd64-$VERSION.tar.gz
+readonly STUFF_16=$BASE_16-linux-amd64-$VERSION.tar.gz
 readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
@@ -34,7 +36,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
   cd $TEMP_DIR
 
-  for java_version in 8 11; do
+  for java_version in 8 11 16; do
     BASE=BASE_$java_version
     STUFF=STUFF_$java_version
 
@@ -65,7 +67,8 @@ echo done
 echo -n Configuring...
 echo "export GRAALVM_8_HOME=$TARGET_DIR/default-8
 export GRAALVM_11_HOME=$TARGET_DIR/default-11
+export GRAALVM_16_HOME=$TARGET_DIR/default-16
 
-export JAVA_HOME=\$GRAALVM_11_HOME
+export JAVA_HOME=\$GRAALVM_16_HOME
 export PATH=\$JAVA_HOME/bin:\$PATH" > $HOME/.profile.d/$MONIKER.sh
 echo done
