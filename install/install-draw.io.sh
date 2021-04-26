@@ -17,7 +17,7 @@ Categories=Office;
 Name=draw.io
 Comment=
 Icon=$TARGET_DIR/draw.io.png
-Exec=$TARGET_DIR/$MONIKER
+Exec=$TARGET_DIR/draw.io
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }
 
@@ -27,7 +27,7 @@ if [ -d "$TARGET_DIR" ]; then
 fi
 
 mkdir --parents $TARGET_DIR
-wget --quiet --output-document=$TARGET_DIR/$MONIKER https://github.com/jgraph/drawio-desktop/releases/download/v$VERSION/$STUFF
-chmod +x $TARGET_DIR/$MONIKER
+wget --quiet --output-document=$TARGET_DIR/draw.io https://github.com/jgraph/drawio-desktop/releases/download/v$VERSION/$STUFF
+chmod +x $TARGET_DIR/draw.io
 cp --force $INSTALLER_DIR/draw.io.png $TARGET_DIR
 create_desktop_entry

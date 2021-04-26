@@ -17,7 +17,7 @@ Categories=Development;
 Name=Gaphor
 Comment=
 Icon=$TARGET_DIR/gaphor.png
-Exec=$TARGET_DIR/$MONIKER
+Exec=$TARGET_DIR/gaphor
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }
 
@@ -27,7 +27,7 @@ if [ -d "$TARGET_DIR" ]; then
 fi
 
 mkdir --parents $TARGET_DIR
-wget --quiet --output-document=$TARGET_DIR/$MONIKER https://github.com/gaphor/gaphor/releases/download/$VERSION/$STUFF
-chmod +x $TARGET_DIR/$MONIKER
+wget --quiet --output-document=$TARGET_DIR/gaphor https://github.com/gaphor/gaphor/releases/download/$VERSION/$STUFF
+chmod +x $TARGET_DIR/gaphor
 cp --force $INSTALLER_DIR/gaphor.png $TARGET_DIR
 create_desktop_entry

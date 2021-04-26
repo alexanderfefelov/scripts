@@ -29,6 +29,6 @@ fi
 mkdir --parents $TARGET_DIR
 
 wget --quiet --output-document=$TARGET_DIR/etcher https://github.com/balena-io/etcher/releases/download/v$VERSION/$STUFF
-chmod +x $TARGET_DIR/$MONIKER
+chmod +x $TARGET_DIR/etcher
 cp --force $INSTALLER_DIR/etcher.png $TARGET_DIR
 create_desktop_entry

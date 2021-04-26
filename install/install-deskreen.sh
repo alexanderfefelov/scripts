@@ -30,6 +30,6 @@ fi
 mkdir --parents $TARGET_DIR
 
 wget --quiet --output-document=$TARGET_DIR/deskreen https://github.com/pavlobu/deskreen/releases/download/v$VERSION/$STUFF
-chmod +x $TARGET_DIR/$MONIKER
+chmod +x $TARGET_DIR/deskreen
 cp --force $INSTALLER_DIR/deskreen.png $TARGET_DIR
 create_desktop_entry

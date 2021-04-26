@@ -17,7 +17,7 @@ Categories=Development;
 Name=Cutter
 Comment=
 Icon=$TARGET_DIR/cutter.svg
-Exec=$TARGET_DIR/$MONIKER
+Exec=$TARGET_DIR/cutter
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }
 
@@ -27,7 +27,7 @@ if [ -d "$TARGET_DIR" ]; then
 fi
 
 mkdir --parents $TARGET_DIR
-wget --quiet --output-document=$TARGET_DIR/$MONIKER https://github.com/rizinorg/cutter/releases/download/v$VERSION/$STUFF
-chmod +x $TARGET_DIR/$MONIKER
+wget --quiet --output-document=$TARGET_DIR/cutter https://github.com/rizinorg/cutter/releases/download/v$VERSION/$STUFF
+chmod +x $TARGET_DIR/cutter
 cp --force $INSTALLER_DIR/cutter.svg $TARGET_DIR
 create_desktop_entry
