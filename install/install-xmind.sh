@@ -29,7 +29,7 @@ Exec=$START_SCRIPT %u
 Terminal=false" > $HOME/.local/share/applications/$MONIKER.desktop
 }
 
-install_mime_type() { # https://www.iana.org/assignments/media-types/application/vnd.balsamiq.bmpr
+install_mime_type() {
   echo '<?xml version="1.0"?>
 <mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
   <mime-type type="'$MIME_TYPE'">
