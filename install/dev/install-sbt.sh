@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=sbt
-readonly VERSION=1.5.0
+readonly VERSION=1.5.1
 readonly STUFF=sbt-$VERSION.tgz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
