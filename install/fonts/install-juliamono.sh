@@ -7,7 +7,7 @@ set -e
 # Elevate privileges
 [ $UID -eq 0 ] || exec sudo bash "$0" "$@"
 
-readonly VERSION=0.025
+readonly VERSION=0.037
 readonly STUFF=JuliaMono.zip
 
 readonly TARGET_DIR=/usr/share/fonts/truetype/juliamono

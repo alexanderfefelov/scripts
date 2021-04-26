@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=cutter
-readonly VERSION=1.12.0
+readonly VERSION=2.0.1
 readonly STUFF=Cutter-v$VERSION-x64.Linux.AppImage
 readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
 readonly TARGET_DIR=$HOME/dev/$MONIKER
@@ -27,7 +27,7 @@ if [ -d "$TARGET_DIR" ]; then
 fi
 
 mkdir --parents $TARGET_DIR
-wget --quiet --output-document=$TARGET_DIR/$MONIKER https://github.com/radareorg/cutter/releases/download/v$VERSION/$STUFF
+wget --quiet --output-document=$TARGET_DIR/$MONIKER https://github.com/rizinorg/cutter/releases/download/v$VERSION/$STUFF
 chmod +x $TARGET_DIR/$MONIKER
 cp --force $INSTALLER_DIR/cutter.svg $TARGET_DIR
 create_desktop_entry

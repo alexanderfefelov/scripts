@@ -4,7 +4,7 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly VERSION=2.2.14
+readonly VERSION=2.2.15
 readonly STUFF=vagrant_${VERSION}_linux_amd64.zip
 
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)

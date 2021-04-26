@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=groovy
-readonly VERSION=3.0.7
+readonly VERSION=3.0.8
 readonly STUFF=apache-groovy-binary-$VERSION.zip
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
@@ -20,7 +20,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   cd $TEMP_DIR
 
   echo -n Downloading...
-  wget --quiet https://dl.bintray.com/groovy/maven/$STUFF
+  wget --quiet https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/$STUFF
   echo done
 
   echo -n Extracting...

@@ -4,7 +4,7 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly VERSION=1.28.2
+readonly VERSION=1.29.1
 readonly STUFF=docker-compose-Linux-x86_64
 
 wget --quiet --output-document=$HOME/bin/docker-compose https://github.com/docker/compose/releases/download/$VERSION/$STUFF

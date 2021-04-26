@@ -4,7 +4,7 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly VERSION=12.0.4
+readonly VERSION=12.1.2
 readonly STUFF=tokei-x86_64-unknown-linux-gnu.tar.gz
 
 wget --quiet \

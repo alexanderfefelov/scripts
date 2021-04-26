@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=jbang
-readonly VERSION=0.68.0
+readonly VERSION=0.70.0
 readonly STUFF=jbang-$VERSION.zip
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 

@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=flyway
-readonly VERSION=7.5.3
+readonly VERSION=7.8.1
 readonly STUFF=flyway-commandline-$VERSION-linux-x64.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
