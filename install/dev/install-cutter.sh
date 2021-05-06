@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=cutter
-readonly VERSION=2.0.1
+readonly VERSION=2.0.2
 readonly STUFF=Cutter-v$VERSION-x64.Linux.AppImage
 readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
 readonly TARGET_DIR=$HOME/dev/$MONIKER
