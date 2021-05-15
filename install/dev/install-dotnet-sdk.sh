@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=dotnet-sdk
-readonly VERSION=5.0.102
+readonly VERSION=5.0.203
 readonly STUFF=dotnet-sdk-$VERSION-linux-x64.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
@@ -20,7 +20,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   cd $TEMP_DIR
 
   echo -n Downloading...
-  wget --quiet https://download.visualstudio.microsoft.com/download/pr/7f736160-9f34-4595-8d72-13630c437aef/b9c4513afb0f8872eb95793c70ac52f6/$STUFF
+  wget --quiet https://download.visualstudio.microsoft.com/download/pr/ef13f9da-46dc-4de9-a05e-5a4c20574189/be95913ebf1fb6c66833ca40060d3f65/$STUFF
   echo done
 
   echo -n Extracting...
