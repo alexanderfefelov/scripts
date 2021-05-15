@@ -7,7 +7,7 @@ set -e
 # Elevate privileges
 [ $UID -eq 0 ] || exec sudo bash "$0" "$@"
 
-STUFF=skypeforlinux-64.deb
+readonly STUFF=skypeforlinux-64.deb
 
 readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
 (
