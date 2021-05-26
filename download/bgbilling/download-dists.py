@@ -8,7 +8,7 @@ import sys
 import urllib.request
 
 
-VERSION = '8.2101'
+VERSION = '8.2104'
 BASE_URL_TEMPLATE = 'https://bgbilling.ru/download/{}'
 COMPONENT_REGEX = re.compile(r'^name:(\S*)\s*zipName:(\S*)\s*checkSum:(\S*)\s*size:(\d*)$')
 
