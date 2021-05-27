@@ -13,5 +13,5 @@ wget --quiet \
   --output-document=- \
 | sudo tee /etc/apt/sources.list.d/msprod.list
 sudo apt-get -qq update
-sudo apt-get -qq install mssql-tools
+sudo apt-get -qq install mssql-tools msodbcsql17 unixodbc libodbc1
 ln --force --symbolic /opt/mssql-tools/bin/* $HOME/bin/
