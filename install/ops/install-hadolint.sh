@@ -4,7 +4,7 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly VERSION=2.3.0
+readonly VERSION=2.4.1
 readonly STUFF=hadolint-Linux-x86_64
 
 wget --quiet \
