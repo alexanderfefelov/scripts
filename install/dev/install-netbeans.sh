@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=netbeans
-readonly VERSION=12.3
+readonly VERSION=12.4
 readonly STUFF=netbeans-$VERSION-bin.zip
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
