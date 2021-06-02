@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=jaspersoft-studio
-readonly VERSION=6.16.0
+readonly VERSION=6.17.0
 readonly STUFF=TIB_js-studiocomm_${VERSION}_linux_x86_64.tgz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
