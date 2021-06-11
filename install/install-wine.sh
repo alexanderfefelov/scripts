@@ -5,7 +5,7 @@
 set -e
 
 sudo apt-get -qq update
-sudo apt-get -qq install wine
+sudo apt-get -qq install wine winetricks
 
 readonly TARGET_DIR=$HOME/.cache/wine
 mkdir --parents $TARGET_DIR
