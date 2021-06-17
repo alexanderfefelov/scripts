@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=flutter
-readonly VERSION=2.0.6
+readonly VERSION=2.2.2
 readonly STUFF=flutter_linux_$VERSION-stable.tar.xz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
@@ -20,7 +20,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   cd $TEMP_DIR
 
   echo -n Downloading...
-  wget --quiet https://storage.googleapis.com/flutter_infra/releases/stable/linux/$STUFF
+  wget --quiet https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/$STUFF
   echo done
 
   echo -n Extracting...
