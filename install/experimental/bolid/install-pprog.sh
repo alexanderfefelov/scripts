@@ -4,16 +4,16 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly MONIKER=uprog
-readonly VERSION=4.1.5.10498
-readonly STUFF=InstallUProg_$VERSION.exe
+readonly MONIKER=pprog
+readonly VERSION=3.13.50.10337
+readonly STUFF=instpprog_$VERSION.exe
 readonly TARGET_DIR=$HOME/programs/bolid/$MONIKER
 readonly START_SCRIPT=$TARGET_DIR/start-$MONIKER.sh
-readonly UPROG_DIR=$TARGET_DIR/drive_c/uprog
-readonly EXE=UProg.exe
+readonly PPROG_DIR=$TARGET_DIR/drive_c/pprog
+readonly EXE=PProg.exe
 
 create_start_script() {
-  echo WINEPREFIX=$TARGET_DIR WINEARCH=win32 wine $UPROG_DIR/$EXE > $START_SCRIPT
+  echo WINEPREFIX=$TARGET_DIR WINEARCH=win32 wine $PPROG_DIR/$EXE > $START_SCRIPT
   chmod +x $START_SCRIPT
 }
 
@@ -31,7 +31,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   cd $TEMP_DIR
 
   echo -n Downloading...
-  wget --quiet https://github.com/alexanderfefelov/orion-uprog-dist/raw/main/$STUFF
+  wget --quiet https://github.com/alexanderfefelov/orion-pprog-dist/raw/main/$STUFF
   echo done
 
   echo -n Extracting...
@@ -39,8 +39,8 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   echo done
 
   echo -n Installing...
-  mkdir --parents $UPROG_DIR
-  mv --force 'code$GetExePath'/* $UPROG_DIR
+  mkdir --parents $PPROG_DIR
+  mv --force app/* $PPROG_DIR
   create_start_script
   echo done
 )
