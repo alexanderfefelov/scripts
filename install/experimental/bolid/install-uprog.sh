@@ -7,7 +7,7 @@ set -e
 readonly MONIKER=uprog
 readonly VERSION=4.1.5.10498
 readonly STUFF=InstallUProg_$VERSION.exe
-readonly TARGET_DIR=$HOME/programs/$MONIKER
+readonly TARGET_DIR=$HOME/programs/bolid/$MONIKER
 readonly START_SCRIPT=$TARGET_DIR/start-$MONIKER.sh
 readonly UPROG_DIR=$TARGET_DIR/drive_c/uprog
 readonly EXE=UProg.exe
