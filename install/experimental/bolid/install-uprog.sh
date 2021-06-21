@@ -13,7 +13,8 @@ readonly UPROG_DIR=$TARGET_DIR/drive_c/uprog
 readonly EXE=UProg.exe
 
 create_start_script() {
-  echo WINEPREFIX=$TARGET_DIR WINEARCH=win32 wine $UPROG_DIR/$EXE > $START_SCRIPT
+  echo cd $UPROG_DIR > $START_SCRIPT
+  echo WINEPREFIX=$TARGET_DIR WINEARCH=win32 wine $EXE >> $START_SCRIPT
   chmod +x $START_SCRIPT
 }
 
