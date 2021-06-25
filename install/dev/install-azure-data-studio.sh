@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=azure-data-studio
-readonly VERSION=1.29.0
+readonly VERSION=1.30.0
 readonly STUFF=azuredatastudio-linux-$VERSION.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
@@ -31,7 +31,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   cd $TEMP_DIR
 
   echo -n Downloading...
-  wget --quiet https://sqlopsbuilds.azureedge.net/stable/0f5cfdc2c8c2433028842e16dc5ac1a65da24292/$STUFF
+  wget --quiet https://sqlopsbuilds.azureedge.net/stable/59c4b8e90cf2d3a24bed72623197f10f8d090fdc/$STUFF
   echo done
 
   echo -n Extracting...
