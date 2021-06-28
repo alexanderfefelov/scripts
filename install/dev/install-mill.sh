@@ -4,7 +4,7 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly VERSION=0.9.6
+readonly VERSION=0.9.8
 readonly STUFF=$VERSION
 
 wget --quiet \
