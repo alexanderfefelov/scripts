@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=gradle
-readonly VERSION=7.1
+readonly VERSION=7.1.1
 readonly STUFF=gradle-$VERSION-bin.zip
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
