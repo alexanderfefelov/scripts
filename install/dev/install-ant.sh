@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=ant
-readonly VERSION=1.10.10
+readonly VERSION=1.10.11
 readonly STUFF=apache-ant-$VERSION-bin.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 
