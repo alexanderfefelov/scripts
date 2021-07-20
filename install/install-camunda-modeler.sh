@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=camunda-modeler
-readonly VERSION=4.8.1
+readonly VERSION=4.9.0
 readonly STUFF=camunda-modeler-$VERSION-linux-x64.tar.gz
 readonly TARGET_DIR=$HOME/programs/$MONIKER
 readonly MIME_TYPES="
