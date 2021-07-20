@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=sumatra-pdf
-readonly VERSION=3.2
+readonly VERSION=3.3.2
 readonly STUFF=SumatraPDF-$VERSION-64.zip
 readonly INSTALLER_DIR=$(dirname "$(realpath "$0")")
 readonly TARGET_DIR=$HOME/programs/$MONIKER
@@ -64,7 +64,7 @@ readonly TEMP_DIR=$(mktemp --directory -t delete-me-XXXXXXXXXX)
   cd $TEMP_DIR
 
   echo -n Downloading...
-  wget --quiet https://www.sumatrapdfreader.org/dl2/$STUFF
+  wget --quiet https://kjkpubsf.sfo2.digitaloceanspaces.com/software/sumatrapdf/rel/$STUFF
   echo done
 
   echo -n Extracting...
