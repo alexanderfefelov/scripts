@@ -5,7 +5,7 @@
 set -e
 
 readonly MONIKER=go
-readonly VERSION=1.16.5
+readonly VERSION=1.16.6
 readonly STUFF=go$VERSION.linux-amd64.tar.gz
 readonly TARGET_DIR=$HOME/dev/$MONIKER
 readonly WORKSPACE=$HOME/projects/$MONIKER
