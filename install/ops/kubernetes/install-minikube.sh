@@ -4,7 +4,7 @@
 # a list, or a compound command returns a non-zero status
 set -e
 
-readonly VERSION=1.21.0
+readonly VERSION=1.22.0
 readonly STUFF=minikube-linux-amd64
 
 wget --quiet --output-document=$HOME/bin/minikube https://github.com/kubernetes/minikube/releases/download/v$VERSION/$STUFF
